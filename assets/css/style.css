@@ -68,4 +68,8 @@ body {
         height: auto; 
         padding-bottom: 15vw; 
     }
+
+    .leaderboard {
+        padding: 1rem 1rem;
+    }
 }

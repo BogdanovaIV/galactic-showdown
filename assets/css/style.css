@@ -13,6 +13,46 @@ body {
 .heading {
     box-shadow: 5px 5px 10px #092e6d;
 }
+
+.join-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.join-side h2 {
+    margin: 0;
+}
+
+.sides {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sides input[type="radio"] {
+    display: none;
+}
+
+.sides img {
+   /* The radio-button "side" is a circle.*/
+   width: 30vw; 
+   height: auto;
+   margin: 5px;
+   padding: 0.5rem;
+   border: 2px solid #0B3D91;
+   border-radius: 50%;
+   background-color: #a9a9a9b6;
+}
+
+.sides input[type="radio"]:checked + label img {
+    background-color: #ff4400b2;
+  }
+
+  .sides img:hover {
+    background-color: #892be295;
+  }
+
 .game-buttons {
     display: flex;
     flex-direction: column;
@@ -66,6 +106,11 @@ body {
 
 /* Media query: tablets and larger(768px and up)*/
 @media screen and (min-width: 768px) {
+
+    .sides img {
+        width: 5vw;
+    }
+
     /* Maps are displayed in a row. */
     .game-types {
         flex-direction: row;

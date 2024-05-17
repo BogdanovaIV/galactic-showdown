@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Galactic Showdown</title>
 </head>
+
 <body>
     <h1 class="heading">Galactic Showdown</h1>
+    <div class="join-side">
+        <h2>Join The Light Or Dark Side.</h2>
+        <div class="sides">
+            <input type="radio" id="light-side" name="side" value="light-side" checked>
+            <label for="light-side"><img src="./assets/images/yoda.webp" alt="You can chose the Light side."></label>
+            <input type="radio" id="dark-side" name="side" value="dark-side">
+            <label for="dark-side"><img src="./assets/images/darth-vader.webp" alt="You can chose the Dark side."></label>
+        </div>
+    </div>
     <div class="game-buttons">
         <div class="game-types">
             <button data-page="game-map1" class="game-map"></button>
@@ -17,4 +28,5 @@
         <script src="assets/js/script-leaderboard.js"></script>
     </div>
 </body>
+
 </html>

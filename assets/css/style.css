@@ -25,8 +25,10 @@ body {
 }
 
 .game-map {
+    /* The button "map" is square.*/
     width: 50vw; 
-    height: 50vh; 
+    height: auto;
+    padding-bottom: 50vw; 
     border-radius: 5px;
     border: 2px solid #0B3D91;
     cursor: pointer;

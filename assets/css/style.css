@@ -112,6 +112,17 @@ h2 {
     border: 3px solid #ff4400b2;
 }
 
+/* leaderboard.html*/
+
+#leader-table {
+    width: 95%;
+    margin: 5px;
+}
+
+.center-text {
+    text-align: center;
+}
+
 /* Media query: tablets and larger(768px and up)*/
 @media screen and (min-width: 768px) {
 

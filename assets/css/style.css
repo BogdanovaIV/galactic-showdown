@@ -1,5 +1,10 @@
-/* Body */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+/* Body */
 body {
     min-height: 100vh;
     display: flex;
@@ -10,18 +15,21 @@ body {
     font-family: YSText, Helvetica, Arial, sans-serif;
 }
 
+h2 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+}
+
 .heading {
     box-shadow: 5px 5px 10px #092e6d;
+    margin: 5px 0 10px 0;
 }
 
 .join-side {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.join-side h2 {
-    margin: 0;
 }
 
 .sides {

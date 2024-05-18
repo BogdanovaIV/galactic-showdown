@@ -3,6 +3,18 @@ google.charts.load("current", {
     "packages": ["corechart", "table"]
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const params = getQueryParams();
+    if (params.hasOwnProperty("type") && params["type"] === "only-show") {
+        document.getElementsByClassName("user-score")[0].className = "user-score hidden";
+        document.getElementsByClassName("save-score")[0].className = "save-score hidden";
+    }
+    if (params.hasOwnProperty("score")) {
+        document.getElementById("total-score").innerText = params["score"];
+    }
+});
+
 /**
  * The returned leaderboard path
  */

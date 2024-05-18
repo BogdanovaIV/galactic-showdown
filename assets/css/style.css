@@ -230,14 +230,12 @@ h2 {
     font-size: 150%;
 }
 
-.game-over p { 
+.game-over p {
     margin: 1rem;
     font-weight: bold;
 }
 
-.hidden {
-    display: none;
-}
+
 /* leaderboard.html */
 
 #leader-table {
@@ -249,13 +247,20 @@ h2 {
     text-align: center;
 }
 
+.user-score{
+    margin-top: 10px;
+    font-size: 150%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .save-score {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 1rem;  
+    margin: 1rem;
 }
 
 .text-input {
@@ -278,6 +283,11 @@ h2 {
 
 .save:hover {
     background-color: #ff4400b2;
+}
+
+/* General class which applies in the end*/
+.hidden {
+    display: none;
 }
 
 /* Media query: tablets and larger(768px and up)*/

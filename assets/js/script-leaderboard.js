@@ -54,7 +54,8 @@ async function drawTable() {
     table.draw(data, {
         "width": "100%",
         "height": "100%",
-        cssClassNames: {   
+        cssClassNames: {
+            // Use for style of cells and rows    
             tableRow: 'tableRow',  
             tableCell: 'tableCell'
             

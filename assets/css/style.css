@@ -43,29 +43,30 @@ h2 {
 }
 
 .sides img {
-   /* The radio-button "side" is a circle.*/
-   width: 30vw; 
-   height: auto;
-   margin: 5px;
-   padding: 0.5rem;
-   border: 2px solid #0B3D91;
-   border-radius: 50%;
-   background-color: #a9a9a9b6;
+    /* The radio-button "side" is a circle.*/
+    width: 30vw;
+    height: auto;
+    margin: 5px;
+    padding: 0.5rem;
+    border: 2px solid #0B3D91;
+    border-radius: 50%;
+    background-color: #a9a9a9b6;
 }
 
-.sides input[type="radio"]:checked + label img {
+.sides input[type="radio"]:checked+label img {
     background-color: #ff4400b2;
-  }
+}
 
-  .sides img:hover {
+.sides img:hover {
     background-color: #892be295;
-  }
+}
 
 .game-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .game-types {
     display: flex;
     flex-direction: column;
@@ -74,14 +75,15 @@ h2 {
 
 .game-map {
     /* The button "map" is square.*/
-    width: 50vw; 
+    width: 50vw;
     height: auto;
-    padding-bottom: 50vw; 
+    padding-bottom: 50vw;
     border-radius: 5px;
     border: 2px solid #0B3D91;
     cursor: pointer;
     margin: 1rem;
 }
+
 .game-map[data-page="game-map1"] {
     background: url('../images/map1.webp') no-repeat center/cover;
 }
@@ -108,18 +110,18 @@ h2 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.leaderboard:hover{
+.leaderboard:hover {
     border: 3px solid #ff4400b2;
 }
 
 /* game.html */
 
 /* body */
-.game-map1{
+.game-map1 {
     background: url('../images/map1.webp') no-repeat center/cover;
 }
 
-.game-map2{
+.game-map2 {
     background: url('../images/map2.webp') no-repeat center/cover;
 }
 
@@ -147,30 +149,43 @@ h2 {
 .scores {
     display: flex;
     flex-direction: row;
-    align-items:flex-end;
+    align-items: flex-end;
 }
+
 .side-score {
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     margin: 3px 0 0 5px;
     padding: 5px;
 }
 
 .side-score img {
-    width: 40px; 
+    width: 40px;
     height: auto;
-   
-   border: 2px solid #0B3D91;
-   border-radius: 50%;
-   background-color: #a9a9a9b6;
+    padding: 2px;
+
+    border: 2px solid #0B3D91;
+    border-radius: 50%;
+    background-color: #a9a9a9b6;
 }
 
 .side-score p {
     width: 40px;
     margin-left: 10px;
     text-align: center;
+    font-weight: bold;
+    font-size: large;
 }
+
+#user-side {
+    color: #ff4400;
+}
+
+#user-side img {
+    background-color: #ff4400b2;
+}
+
 /* leaderboard.html */
 
 #leader-table {
@@ -192,13 +207,13 @@ h2 {
     /* Maps are displayed in a row. */
     .game-types {
         flex-direction: row;
-     }
+    }
 
-     /* The button "map" is square.*/
+    /* The button "map" is square.*/
     .game-map {
-        width: 15vw; 
-        height: auto; 
-        padding-bottom: 15vw; 
+        width: 15vw;
+        height: auto;
+        padding-bottom: 15vw;
     }
 
     .leaderboard {

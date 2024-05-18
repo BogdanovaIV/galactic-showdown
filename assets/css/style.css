@@ -249,6 +249,37 @@ h2 {
     text-align: center;
 }
 
+.save-score {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 1rem;  
+}
+
+.text-input {
+    border-radius: 5px;
+    margin: 10px;
+    padding: 0 5px;
+    height: 25px;
+}
+
+.save {
+    padding: 0.3rem 0.7rem;
+    background-color: #a9a9a9b6;
+    color: #0B3D91;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.save:hover {
+    background-color: #ff4400b2;
+}
+
 /* Media query: tablets and larger(768px and up)*/
 @media screen and (min-width: 768px) {
 

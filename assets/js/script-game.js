@@ -4,6 +4,8 @@ let userShips = [];
 let numberEnemyShips = 50;
 let enemyShips = [];
 
+let userSide;
+
 let shipsPositions = [];
 let screenExpansionFactor = 2;
 let lengthShip = 50; //Set equal width class "ship"  
@@ -20,6 +22,7 @@ document.addEventListener("readystatechange", function () {
         //Set user and enemy side
         if (params.hasOwnProperty("side")) {
             //User side
+            userSide = params["side"];
             fillParametersForSide("user-side", params["side"]);
             //Enemy side
             fillParametersForSide("enemy-side", getEnemySide(params["side"]));
@@ -94,10 +97,10 @@ function createShip() {
     let classShip;
     let idName;
     if (typeShip === 1) {
-        idName = "light-ship" + numberUserShips--;
+        idName = "light-side" + numberUserShips--;
         classShip = userShips[getRandomInt(1, userShips.length) - 1];
     } else {
-        idName = "dark-ship" + numberEnemyShips--;
+        idName = "dark-side" + numberEnemyShips--;
         classShip = enemyShips[getRandomInt(1, enemyShips.length) - 1];
     }
 
@@ -128,14 +131,33 @@ function createShip() {
     shipButton.id = idName;
     shipButton.style.top = top.toString() + "px";
     shipButton.style.left = left.toString() + "px";
+    //Add the event that changes position
     shipButton.intervalId = setInterval(function () {
         changeTopPosition.call(shipButton);
     }, 50);
-
+   
+    // Add element in body
     let gameBody = document.getElementsByClassName("game-body")[0];
     gameBody.appendChild(shipButton);
+
+     //Add shoot ship
+     document.getElementById(idName).addEventListener("click", function () {
+        let idScore = "enemy-score";
+        if (this.id.includes(userSide)) {
+            idScore = "user-score";
+        }
+        calculateScore(idScore);
+        this.remove();
+    });
 }
 
+/**
+ * Calculate score and remove element 
+ */
+function calculateScore(idScore) {
+    let oldScore = parseInt(document.getElementById(idScore).innerText);
+    document.getElementById(idScore).innerText = ++oldScore;
+}
 /**
  * Read parameters of location-url
  * the returned dictionary with parameters of location-url 

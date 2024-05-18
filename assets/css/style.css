@@ -115,11 +115,11 @@ h2 {
 /* game.html */
 
 /* body */
-.image-map1{
+.game-map1{
     background: url('../images/map1.webp') no-repeat center/cover;
 }
 
-.image-map2{
+.game-map2{
     background: url('../images/map2.webp') no-repeat center/cover;
 }
 

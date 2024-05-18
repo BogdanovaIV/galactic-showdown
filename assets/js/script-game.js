@@ -46,14 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /**
- * Get random integer number ranging from min to max
- * the returned integer number 
- */
-function getRandomInt(min, max) {
-    return Math.ceil(Math.random() * (max - min)) + min - 1;
-}
-
-/**
  * Change top position and remove element that is outside the range
  * the returned dictionary with parameters of location-url 
  */
@@ -174,18 +166,6 @@ function calculateScore(idScore) {
     let oldScore = parseInt(document.getElementById(idScore).innerText);
     document.getElementById(idScore).innerText = ++oldScore;
 }
-/**
- * Read parameters of location-url
- * the returned dictionary with parameters of location-url 
- */
-function getQueryParams() {
-    const params = new URLSearchParams(window.location.search);
-    let queryParams = {};
-    for (const [key, value] of params.entries()) {
-        queryParams[key] = value;
-    }
-    return queryParams;
-}
 
 /**
  * Return enemy side
@@ -193,7 +173,6 @@ function getQueryParams() {
 function getEnemySide(sideName) {
     return sideName === "light-side" ? "dark-side" : "light-side";
 }
-
 
 /**
  * Create array with value of attributes: src, alt for sides

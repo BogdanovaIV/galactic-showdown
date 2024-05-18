@@ -112,7 +112,55 @@ h2 {
     border: 3px solid #ff4400b2;
 }
 
-/* leaderboard.html*/
+/* game.html */
+.game-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 45px;
+    box-shadow: 0 3px 3px #7D919E;
+    
+}
+
+.game-header a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 180%;
+}
+
+.scores {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-end;
+}
+.side-score {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    margin: 3px 0 0 5px;
+    padding: 5px;
+}
+
+.side-score img {
+    width: 40px; 
+    height: auto;
+   
+   border: 2px solid #0B3D91;
+   border-radius: 50%;
+   background-color: #a9a9a9b6;
+}
+
+.side-score p {
+    width: 40px;
+    margin-left: 10px;
+    text-align: center;
+}
+/* leaderboard.html */
 
 #leader-table {
     width: 95%;

@@ -4,6 +4,8 @@ let userShips = [];
 let numberEnemyShips = 50;
 let enemyShips = [];
 
+let lifeShips = 0;
+
 let userSide;
 
 let shipsPositions = [];
@@ -32,9 +34,15 @@ document.addEventListener("readystatechange", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     //Create all ships in advance to avoid collision
-    for (let i = 0; i < numberUserShips + numberEnemyShips; i++) {
+    let sum = numberUserShips + numberEnemyShips;
+    for (let i = 0; i < sum; i++) {
         createShip();
+        lifeShips++;
     }
+
+    document.getElementsByClassName("leaderboard")[0].addEventListener("click", function () {
+        openLeaderboardPage();
+    });
 });
 
 /**
@@ -57,6 +65,9 @@ function changeTopPosition() {
     if (parseInt(this.style.top) > window.screen.height) {
         clearInterval(this.intervalId);
         this.remove();
+        //Show user score
+        lifeShips--;
+        showResult();
     }
 }
 
@@ -135,19 +146,24 @@ function createShip() {
     shipButton.intervalId = setInterval(function () {
         changeTopPosition.call(shipButton);
     }, 50);
-   
+
     // Add element in body
     let gameBody = document.getElementsByClassName("game-body")[0];
     gameBody.appendChild(shipButton);
 
-     //Add shoot ship
-     document.getElementById(idName).addEventListener("click", function () {
+    //Add shoot ship
+    document.getElementById(idName).addEventListener("click", function () {
         let idScore = "enemy-score";
         if (this.id.includes(userSide)) {
             idScore = "user-score";
         }
         calculateScore(idScore);
+        //Remove element
+        clearInterval(this.intervalId);
         this.remove();
+        //Show user score
+        lifeShips--;
+        showResult();
     });
 }
 
@@ -221,4 +237,24 @@ function fillParametersForSide(id, sideName) {
     } else {
         fillShips(sideName, enemyShips);
     }
+}
+
+/**
+ * Show user score and button to save this score in leaderboard
+ * image side 
+ */
+function showResult() {
+    if (lifeShips === 0) {
+        document.getElementsByClassName("game-over")[0].className = "game-over";
+        let userScore = parseInt(document.getElementById("user-score").innerText);
+        let enemyScore = parseInt(document.getElementById("enemy-score").innerText);
+        document.getElementById("total-score").innerText = enemyScore - userScore;
+    }
+}
+
+/**
+ * Open leaderboard with score in the current window 
+ */
+function openLeaderboardPage() {
+    window.location.href = `leaderboard.html?type=add-user&score=${document.getElementById("total-score").innerText}`;
 }

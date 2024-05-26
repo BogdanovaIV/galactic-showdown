@@ -54,7 +54,7 @@ function changeTopPosition() {
     let currentTop = parseInt(this.style.top);
     this.style.top = (currentTop + 1) + 'px';
     //Check "top" and remove element that is outside the range 
-    if (parseInt(this.style.top) > window.screen.height) {
+    if (parseInt(this.style.top) >= (window.innerHeight - lengthShip)) {
         clearInterval(this.intervalId);
         this.remove();
         //Show user score
@@ -115,8 +115,8 @@ function createShip() {
     let overlap;
     do {
         overlap = false;
-        top = -getRandomInt(0, window.screen.height * screenExpansionFactor);
-        left = getRandomInt(0, window.screen.width - lengthShip);
+        top = -getRandomInt(0, window.innerHeight * screenExpansionFactor);
+        left = getRandomInt(0, window.innerWidth - lengthShip);
         ship = {
             top: top,
             left: left,

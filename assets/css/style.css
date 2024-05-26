@@ -194,8 +194,8 @@ h2 {
 .ship {
     position: absolute;
     width: 50px;
-    height: auto;
-    padding-bottom: 50px;
+    height: 50px;
+    /*padding-bottom: 50px;*/
     margin: 0;
     border: none;
 }

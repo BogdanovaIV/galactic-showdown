@@ -3,6 +3,7 @@ google.charts.load("current", {
     "packages": ["corechart", "table"]
 });
 
+let dataTable;
 
 document.addEventListener("DOMContentLoaded", function () {
     const params = getQueryParams();
@@ -13,6 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (params.hasOwnProperty("score")) {
         document.getElementById("total-score").innerText = params["score"];
     }
+    document.getElementsByClassName("save")[0].addEventListener("click", function () {
+        updateFile();
+    });
+
 });
 
 /**
@@ -27,52 +32,62 @@ function getLeaderboardPath() {
  * the returned leader array
  */
 async function parseFile() {
-
-    let response = await fetch(getLeaderboardPath());
-    if (response.ok) {
-        try {
-            return await response.json();
-        } catch (err) {
-            console.log(`File parsing error: ${err}`);
-            alert(`File parsing error: ${err}. Contact the administrator.`);
-            return [];
+    // Use asynchronous call because we have to get the file from the server.
+    try {
+        // Initiate the fetch request to get the file from the server
+        let response = await fetch(getLeaderboardPath());
+        // Check if the response is okay
+        if (response.ok) {
+            try {
+                return await response.json();
+            } catch (error) {
+                console.error(`File parsing error: ${error}`);
+                alert(`File parsing error: ${error}. Contact the administrator.`);
+                return [];
+            }
         }
+    } catch (error) {
+        console.error(`HTTP error! status: ${response.status}`);
+        alert(`HTTP error! status: ${response.status}. Contact the administrator.`);
+        return [];
     }
-
-    console.log(`HTTP error! status: ${response.status}`);
-    alert(`HTTP error! status: ${response.status}. Contact the administrator.`);
-    return [];
 }
 
 /**
  * Draw Google table
  */
 async function drawTable() {
-    var data = new google.visualization.DataTable();
+    dataTable = new google.visualization.DataTable();
 
-    data.addColumn("number", "Place");
-    data.addColumn("string", "Name");
-    data.addColumn("number", "Score");
+    dataTable.addColumn("string", "Name");
+    dataTable.addColumn("number", "Score");
 
     let leaderArray = await parseFile();
-    data.addRows(leaderArray.length);
+    dataTable.addRows(leaderArray.length);
     for (let i = 0; i < leaderArray.length; i++) {
-        data.setCell(i, 0, i + 1, i + 1, {'className': 'center-text'});
-        data.setCell(i, 1, leaderArray[i].name);
-        data.setCell(i, 2, leaderArray[i].score, leaderArray[i].score, {'className': 'center-text'});
+        dataTable.setCell(i, 0, leaderArray[i].name);
+        dataTable.setCell(i, 1, leaderArray[i].score, leaderArray[i].score, {
+            'className': 'center-text'
+        });
     }
     var table = new google.visualization.Table(document.getElementById("leader-table"));
 
-    table.draw(data, {
+    table.draw(dataTable, {
+        showRowNumber: true,
         "width": "100%",
         "height": "100%",
         cssClassNames: {
             // Use for style of cells and rows    
-            tableRow: 'tableRow',  
+            tableRow: 'tableRow',
             tableCell: 'tableCell'
-            
-          } 
+
+        }
     });
 }
 
 google.charts.setOnLoadCallback(drawTable);
+
+async function updateFile() {
+    //This function will be done in a future version
+    alert('Saving your score. Note: In a future version, this function will be done.');
+}

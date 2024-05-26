@@ -101,10 +101,11 @@ function createShip() {
     let idName;
     if (typeShip === 1) {
         idName = "light-side" + numberUserShips--;
-        classShip = userShips[getRandomInt(1, userShips.length) - 1];
+        classShip = userShips[getRandomInt(0, userShips.length)];
+        
     } else {
         idName = "dark-side" + numberEnemyShips--;
-        classShip = enemyShips[getRandomInt(1, enemyShips.length) - 1];
+        classShip = enemyShips[getRandomInt(0, enemyShips.length)];
     }
 
     let ship;

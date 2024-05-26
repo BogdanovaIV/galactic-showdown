@@ -117,6 +117,11 @@ h2 {
 /* game.html */
 
 /* body */
+.game {
+    /*Use the special cursor for the game place*/
+    cursor: url('../images/target.png'), auto;
+}
+
 .game-map1 {
     background: url('../images/map1.webp') no-repeat center/cover;
 }
@@ -198,6 +203,8 @@ h2 {
     /*padding-bottom: 50px;*/
     margin: 0;
     border: none;
+    /*Use the special cursor for the game place*/
+    cursor: url('../images/target.png'), auto;
 }
 
 .millennium-falcon {
@@ -247,7 +254,7 @@ h2 {
     text-align: center;
 }
 
-.user-score{
+.user-score {
     margin-top: 10px;
     font-size: 150%;
     font-weight: bold;

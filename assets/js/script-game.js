@@ -19,7 +19,7 @@ document.addEventListener("readystatechange", function () {
         // Set map
         if (params.hasOwnProperty("map")) {
             let bodyTeg = document.getElementsByTagName("body")[0];
-            bodyTeg.className = params["map"] + ", game";
+            bodyTeg.className = params["map"] + " game-cursor";
         }
         //Set user and enemy side
         if (params.hasOwnProperty("side")) {

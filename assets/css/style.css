@@ -117,7 +117,7 @@ h2 {
 /* game.html */
 
 /* body */
-.game {
+.game-cursor {
     /*Use the special cursor for the game place*/
     cursor: url('../images/target.png'), auto;
 }
@@ -242,7 +242,6 @@ h2 {
     margin: 1rem;
     font-weight: bold;
 }
-
 
 /* leaderboard.html */
 

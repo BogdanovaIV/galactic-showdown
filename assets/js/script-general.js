@@ -19,3 +19,14 @@ function getQueryParams() {
     return queryParams;
 }
 
+/**
+ * Create audio and play it.
+ * The parameter is the path to the sound file. 
+ */
+function CreatePlayAudio(path){
+    let sound = new Audio(path);
+                
+    sound.play().catch(function(error) {
+        console.error('Error playing the sound:', error);
+    });
+}

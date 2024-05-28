@@ -43,6 +43,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementsByClassName("leaderboard")[0].addEventListener("click", function () {
         openLeaderboardPage();
     });
+
+    //Call sound "laser gun shot". The sounds are overlap each other.       
+    document.getElementsByTagName("body")[0].addEventListener("click", function () {
+        CreatePlayAudio('assets/audio/laser-gun-shot.mp3');
+    });
 });
 
 /**
@@ -102,7 +107,7 @@ function createShip() {
     if (typeShip === 1) {
         idName = "light-side" + numberUserShips--;
         classShip = userShips[getRandomInt(0, userShips.length)];
-        
+
     } else {
         idName = "dark-side" + numberEnemyShips--;
         classShip = enemyShips[getRandomInt(0, enemyShips.length)];
@@ -146,18 +151,29 @@ function createShip() {
 
     //Add shoot ship
     document.getElementById(idName).addEventListener("click", function () {
-        let idScore = "enemy-score";
-        if (this.id.includes(userSide)) {
-            idScore = "user-score";
-        }
-        calculateScore(idScore);
-        //Remove element
-        clearInterval(this.intervalId);
-        this.remove();
-        //Show user score
-        lifeShips--;
-        showResult();
+        shootAtShip(this);
     });
+}
+
+/**
+ * Action when the user shoot at the ship 
+ */
+function shootAtShip(ship) {
+    //Call sound "explosion". The sounds are overlap each other.
+    CreatePlayAudio('assets/audio/explosion.mp3');
+
+
+    let idScore = "enemy-score";
+    if (ship.id.includes(userSide)) {
+        idScore = "user-score";
+    }
+    calculateScore(idScore);
+    //Remove element
+    clearInterval(ship.intervalId);
+    ship.remove();
+    //Show user score
+    lifeShips--;
+    showResult();
 }
 
 /**

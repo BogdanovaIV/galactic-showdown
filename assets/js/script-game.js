@@ -6,8 +6,6 @@ let enemyShips = [];
 
 let lifeShips = 0;
 
-let userSide;
-
 let shipsPositions = [];
 let screenExpansionFactor = 2;
 let lengthShip = 50; //Set equal width class "ship"  
@@ -24,10 +22,9 @@ document.addEventListener("readystatechange", function () {
         //Set user and enemy side
         if (params.hasOwnProperty("side")) {
             //User side
-            userSide = params["side"];
-            fillParametersForSide("user-side", params["side"]);
+            fillParametersForSide("user-side", params["side"], userShips, "Your side");
             //Enemy side
-            fillParametersForSide("enemy-side", getEnemySide(params["side"]));
+            fillParametersForSide("enemy-side", getEnemySide(params["side"]), enemyShips, "The enemy side");
         }
     }
 });
@@ -105,11 +102,11 @@ function createShip() {
     let classShip;
     let idName;
     if (typeShip === 1) {
-        idName = "light-side" + numberUserShips--;
+        idName = "user-side" + numberUserShips--;
         classShip = userShips[getRandomInt(0, userShips.length)];
 
     } else {
-        idName = "dark-side" + numberEnemyShips--;
+        idName = "enemy-side" + numberEnemyShips--;
         classShip = enemyShips[getRandomInt(0, enemyShips.length)];
     }
 
@@ -161,10 +158,8 @@ function createShip() {
 function shootAtShip(ship) {
     //Call sound "explosion". The sounds are overlap each other.
     CreatePlayAudio('assets/audio/explosion.mp3');
-
-
     let idScore = "enemy-score";
-    if (ship.id.includes(userSide)) {
+    if (ship.id.includes("user-side")) {
         idScore = "user-score";
     }
     calculateScore(idScore);
@@ -181,7 +176,7 @@ function shootAtShip(ship) {
  */
 function calculateScore(idScore) {
     let oldScore = parseInt(document.getElementById(idScore).innerText);
-    document.getElementById(idScore).innerText = ++oldScore;
+    document.getElementById(idScore).innerText = idScore === "user-score" ? --oldScore : ++oldScore;
 }
 
 /**
@@ -197,10 +192,10 @@ function getEnemySide(sideName) {
  */
 function getParametersImageSideByName(sideName) {
     if (sideName === "light-side") {
-        return ["./assets/images/yoda.webp", "Your side is the Light."];
+        return ["./assets/images/yoda.webp", " is the Light."];
     }
 
-    return ["/assets/images/darth-vader.webp", "Your side is the Dark."];
+    return ["/assets/images/darth-vader.webp", " is the Dark."];
 }
 
 /**
@@ -221,18 +216,13 @@ function fillShips(sideName, ships) {
  * Fill parameters for side by id: 
  * image side 
  */
-function fillParametersForSide(id, sideName) {
+function fillParametersForSide(id, sideName, ships, altText) {
     let side = document.getElementById(id);
     let imageSide = side.children[0];
     let parametersImageSide = getParametersImageSideByName(sideName);
     imageSide.src = parametersImageSide[0];
-    imageSide.alt = parametersImageSide[1];
-
-    if (sideName === "light-side") {
-        fillShips(sideName, userShips);
-    } else {
-        fillShips(sideName, enemyShips);
-    }
+    imageSide.alt = altText + parametersImageSide[1];
+    fillShips(sideName, ships);
 }
 
 /**
@@ -244,7 +234,7 @@ function showResult() {
         document.getElementsByClassName("game-over")[0].className = "game-over";
         let userScore = parseInt(document.getElementById("user-score").innerText);
         let enemyScore = parseInt(document.getElementById("enemy-score").innerText);
-        document.getElementById("total-score").innerText = enemyScore - userScore;
+        document.getElementById("total-score").innerText = enemyScore + userScore;
     }
 }
 

@@ -5,7 +5,8 @@ google.charts.load("current", {
 
 let dataTable;
 
-document.addEventListener("DOMContentLoaded", function () {
+// Add listener events before the page loads.
+document.addEventListener("readystatechange", function () {
     const params = getQueryParams();
     if (params.hasOwnProperty("type") && params["type"] === "only-show") {
         document.getElementsByClassName("user-score")[0].className = "user-score hidden";
@@ -24,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
  * The returned leaderboard path
  */
 function getLeaderboardPath() {
-    return window.location.origin + "/leaderboard.json";
+    const path = window.location.pathname.replace(/\/[^\/]*$/, '');
+    return window.location.origin + path + "/leaderboard.json";
 }
 
 /**

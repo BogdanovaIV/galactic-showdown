@@ -213,6 +213,10 @@ h2 {
     border: none;
     /*Use the special cursor for the game place*/
     cursor: url('../images/target.png'), auto;
+    /* Hide the text of the button*/
+    color: transparent;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .millennium-falcon {

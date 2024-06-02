@@ -101,13 +101,15 @@ function createShip() {
     //Get random ship
     let classShip;
     let idName;
+    let textButton;
     if (typeShip === 1) {
         idName = "user-side" + numberUserShips--;
         classShip = userShips[getRandomInt(0, userShips.length)];
-
+        textButton = "It is your ship. Do not shoot it."
     } else {
         idName = "enemy-side" + numberEnemyShips--;
         classShip = enemyShips[getRandomInt(0, enemyShips.length)];
+        textButton = "Shoot, shoot. It is the enemy ship.";
     }
 
     let ship;
@@ -137,6 +139,7 @@ function createShip() {
     shipButton.id = idName;
     shipButton.style.top = top.toString() + "px";
     shipButton.style.left = left.toString() + "px";
+    shipButton.textContent = textButton;
     //Add the event that changes position
     shipButton.intervalId = setInterval(function () {
         changeTopPosition.call(shipButton);

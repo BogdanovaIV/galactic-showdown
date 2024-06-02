@@ -17,21 +17,25 @@
     <div class="join-side">
         <h2>Join The Light Or Dark Side</h2>
         <div class="sides">
-            <input type="radio" id="light-side" name="side" value="light-side" checked>
-            <label for="light-side"><img src="./assets/images/yoda.webp" alt="You can chose the Light side."></label>
-            <input type="radio" id="dark-side" name="side" value="dark-side">
-            <label for="dark-side"><img src="./assets/images/darth-vader.webp"
-                    alt="You can chose the Dark side."></label>
+            <fieldset> 
+                <input type="radio" id="light-side" name="side" value="light-side" checked>
+                <label for="light-side"><img src="./assets/images/yoda.webp"
+                        alt="You can chose the Light side."></label>
+                <input type="radio" id="dark-side" name="side" value="dark-side">
+                <label for="dark-side"><img src="./assets/images/darth-vader.webp"
+                        alt="You can chose the Dark side."></label>
+            </fieldset>
         </div>
     </div>
     <div class="game-buttons">
         <h2>Chose The Map</h2>
         <div class="game-types">
-            <button data-page="game-map1" class="game-map"></button>
-            <button data-page="game-map2" class="game-map"></button>
+            <button data-page="game-map1" class="game-map">Galactic Map Number One</button>
+            <button data-page="game-map2" class="game-map">Galactic Map Number Two</button>
         </div>
         <button data-page="leaderboard" class="leaderboard">Leaderboard</button>
     </div>
     <script src="assets/js/script-index.js"></script>
 </body>
+
 </html>

@@ -38,6 +38,10 @@ h2 {
     align-items: center;
 }
 
+.sides fieldset {
+    border: none;
+}
+
 .sides input[type="radio"] {
     display: none;
 }
@@ -76,12 +80,15 @@ h2 {
 .game-map {
     /* The button "map" is square.*/
     width: 50vw;
-    height: auto;
-    padding-bottom: 50vw;
+    height: 50vw;
     border-radius: 5px;
     border: 2px solid #0B3D91;
     cursor: pointer;
     margin: 1rem;
+    /* Hide the text of the button*/
+    color: transparent;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .game-map[data-page="game-map1"] {
@@ -334,8 +341,7 @@ h2 {
     /* The button "map" is square.*/
     .game-map {
         width: 15vw;
-        height: auto;
-        padding-bottom: 15vw;
+        height: 15vw;
     }
 
     .leaderboard {

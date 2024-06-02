@@ -1,39 +1,23 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# GALACTIC SHOWDOWN
 
-Welcome,
+Galactic Showdown is a game for lovers of galactic battles. The user can choose one of the sides: dark or light and has to destroy all enemy ships and none of their own. At the end of the game, the user gets a score which can be saved in the leaderboard.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The game can be accessed by this [link](https://bogdanovaiv.github.io/galactic-showdown/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+![Responsive Mockup](documentation/galactis-showdown-mockup.png)
 
-## Codeanywhere Reminders
+## User Stories
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+__First Time Visitors To The Game__
 
-`python3 -m http.server`
+- As a new visitor, I want to quickly understand how I can play this game to decide if it is interesting for me to stay on.
+- As a new visitor, I want to get intuitive navigation.
+- As a new visitor, I want to easily find the scores of other users.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+__Returning Or Regular Visitors__
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+ - As a returning or regular user, I want to quickly find my score in the leaderboard.
+ 
+ ## Features
 
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+### Existing Features

@@ -1,9 +1,9 @@
 // Add listener events in buttons after loading the page.
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
 
     for (let button of buttons) {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             if (this.getAttribute("data-page") === "leaderboard") {
                 openLeaderboardPage();
             } else {

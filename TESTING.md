@@ -87,3 +87,15 @@ Performance checking was tested by LightHouse.
   The "Leaderboard" page:
 
   ![LightHouse report of Leaderboard page](documentation/light-house-leaderboard.png)
+
+__Code Quality__
+
+Quality checking was tested by [Markup validator service](https://validator.w3.org/) and [CSS validator service](https://jigsaw.w3.org/css-validator/).
+
+ - [Markup validator service](https://validator.w3.org/). All pages were checked and did not have errors and warnings.
+
+ ![The result of checking markup validator service](documentation/html-validator.png)
+
+ - [CSS validator service](https://jigsaw.w3.org/css-validator/). The file 'style.css' was checked and did not have errors.
+
+ ![The result of checking CSS validator service (errors)](documentation/css-validator-errors.png)

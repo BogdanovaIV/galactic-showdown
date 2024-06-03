@@ -71,6 +71,10 @@ __The page "Game"__
 
 The page is the game place where the user plays. 
 
+- It has a special cursor.
+
+![The special cursor](assets/images/target.png)
+
 - It has a score bar where the user can find scores and the button "Home" that redirects to the page "Home".
 
 ![The score bar](documentation/scorebar-game.png)

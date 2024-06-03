@@ -20,6 +20,7 @@ The opening of all pages and the correct operation of all links and buttons were
 | The "Leaderboard" button | Click on the "Leaderboard" button | The "Leaderboard" button opens the "Leaderboard" page with the parameter "only read" | Yes | Yes | - |
 | The "Leaderboard" button is hovered over on large devices | Hover over the "Leaderboard" button | The "Leaderboard" button changes the color of the border | Yes | Yes | - |
 | The "Game" page | | | | | |
+| The page uses a special cursor | The page uses a special cursor | The cursor is changed on a target image | Yes | Yes | - |
 | The "Home" button | Click on the "Home" button | The "Home" button opens the "Home" page | Yes | Yes | - |
 | The "Home" button is hovered over on large devices | Hover over the "Home" button | The "Hone" button changes opacity | Yes | Yes | - |
 | Creating ships | All ships appear | The system generates the random type and position of the ship. All types of ships are generated. A number of ships are created properly | Yes | Yes | - |

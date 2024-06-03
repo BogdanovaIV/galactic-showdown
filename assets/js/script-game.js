@@ -198,7 +198,7 @@ function getParametersImageSideByName(sideName) {
         return ["./assets/images/yoda.webp", " is the Light."];
     }
 
-    return ["/assets/images/darth-vader.webp", " is the Dark."];
+    return ["./assets/images/darth-vader.webp", " is the Dark."];
 }
 
 /**

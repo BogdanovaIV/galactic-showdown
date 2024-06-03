@@ -4,7 +4,13 @@
     box-sizing: border-box;
 }
 
-/* Body */
+/* General styles */
+h2 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -15,16 +21,68 @@ body {
     font-family: YSText, Helvetica, Arial, sans-serif;
 }
 
-h2 {
-    text-transform: uppercase;
-    text-align: center;
-    margin-top: 10px;
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    letter-spacing: 1px;
 }
 
-.heading {
-    box-shadow: 5px 5px 10px #092e6d;
+header h1 {
+    flex: 1 0 auto;
+    text-align: center;
+    text-decoration: underline;
     margin: 5px 0 10px 0;
 }
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header a:hover,
+#volume+label .volume-on:hover,
+#volume+label .volume-off:hover {
+    color: #ff4400b2;
+}
+
+.header-buttons {
+    font-size: 160%;
+}
+
+.header-buttons a {
+    padding: 0 15px;
+}
+
+#volume {
+    display: none;
+}
+
+#volume+label .volume-on {
+    display: none;
+}
+
+#volume:checked+label .volume-off {
+    display: none;
+}
+
+#volume:checked+label .volume-on {
+    display: inline;
+}
+
+/* Main */
+main {
+    /* Enlarge main element to push footer down*/
+    flex: 1 0 auto;
+    /* Enable flex properties for child elements */
+    display: flex;
+    flex-direction: column;
+}
+
+/* index.html */
 
 .join-side {
     display: flex;
@@ -121,9 +179,28 @@ h2 {
     border: 3px solid #ff4400b2;
 }
 
-/* game.html */
+/* footer */
+footer {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
 
-/* body */
+footer a {
+    text-decoration: none;
+    color: #CC2C1F;
+    font-size: 120%;
+    padding: 0 15px;
+}
+
+#red-heart {
+    color: #CC2C1F;
+}
+
+/* game.html */
 .game-cursor {
     /*Use the special cursor for the game place*/
     cursor: url('../images/target.png'), auto;

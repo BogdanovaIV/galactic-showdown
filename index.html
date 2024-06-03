@@ -16,28 +16,57 @@
 </head>
 
 <body>
-    <h1 class="heading">Galactic Showdown</h1>
-    <div class="join-side">
-        <h2>Join The Light Or Dark Side</h2>
-        <div class="sides">
-            <fieldset>
-                <input type="radio" id="light-side" name="side" value="light-side" checked>
-                <label for="light-side"><img src="./assets/images/yoda.webp"
-                        alt="You can chose the Light side."></label>
-                <input type="radio" id="dark-side" name="side" value="dark-side">
-                <label for="dark-side"><img src="./assets/images/darth-vader.webp"
-                        alt="You can chose the Dark side."></label>
-            </fieldset>
+    <header>
+        <h1>Galactic Showdown</h1>
+        <div class="header-buttons">
+            <a href="game-rules.html"
+                aria-label="The 'Game rules' link opens the 'Game rules' page which describes the rules of the game.">
+                <i class="fa-solid fa-circle-info"></i>
+            </a>
+            <input type="checkbox" id="volume" name="volume">
+            <label for="volume" class="volume-label" id="volume-label">
+                <i class="fa-solid fa-volume-xmark volume-off"></i>
+                <i class="fa-solid fa-volume-high volume-on"></i>
+            </label>
         </div>
-    </div>
-    <div class="game-buttons">
-        <h2>Chose The Map</h2>
-        <div class="game-types">
-            <button data-page="game-map1" class="game-map">Galactic Map Number One</button>
-            <button data-page="game-map2" class="game-map">Galactic Map Number Two</button>
+    </header>
+    <main>
+        <div class="join-side">
+            <h2>Join The Light Or Dark Side</h2>
+            <div class="sides">
+                <fieldset>
+                    <input type="radio" id="light-side" name="side" value="light-side" checked>
+                    <label for="light-side"><img src="./assets/images/yoda.webp"
+                            alt="You can chose the Light side."></label>
+                    <input type="radio" id="dark-side" name="side" value="dark-side">
+                    <label for="dark-side"><img src="./assets/images/darth-vader.webp"
+                            alt="You can chose the Dark side."></label>
+                </fieldset>
+            </div>
         </div>
-        <button data-page="leaderboard" class="leaderboard">Leaderboard</button>
-    </div>
+        <div class="game-buttons">
+            <h2>Chose The Map To Start</h2>
+            <div class="game-types">
+                <button data-page="game-map1" class="game-map">Galactic Map Number One</button>
+                <button data-page="game-map2" class="game-map">Galactic Map Number Two</button>
+            </div>
+            <button data-page="leaderboard" class="leaderboard">Leaderboard</button>
+        </div>
+    </main>
+    <footer>
+        <div id="info-author">
+            Made with
+            <i class="fa-solid fa-heart" id="red-heart" aria-label="red heart sign"></i>
+            <i class="fa-regular fa-copyright" aria-label="copyright sign"></i>
+            2024 Irina Bogdanova
+        </div>
+        <a href="https://github.com/BogdanovaIV/" target="_blank" rel="noopener noreferrer"
+            aria-label="Visit my GitHub page (opens in a new tab)">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </footer>
+    <!--Font awesome kit-->
+    <script src="https://kit.fontawesome.com/dd22fe1336.js" crossorigin="anonymous"></script>
     <!--Inner scripts-->
     <script src="assets/js/script-index.js"></script>
 </body>

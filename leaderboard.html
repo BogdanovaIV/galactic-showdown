@@ -16,24 +16,37 @@
 </head>
 
 <body>
-    <div class="leader-heading">
+    <header class="leader-heading">
         <a href="index.html" aria-label="The 'Home' link opens the start page and finish this game"><i
                 class="fa-solid fa-house-chimney"></i>
         </a>
         <h1>Leaderboard</h1>
-    </div>
-
-    <div class="user-score">
-        Your Score: <span id="total-score">0</span>
-    </div>
-    <div class="save-score">
-        <div class="user-name-class">
-            <label for="user-name">Your Name</label>
-            <input type="text" id="user-name" name="user-name" class="text-input">
+    </header>
+    <main>
+        <div class="user-score">
+            Your Score: <span id="total-score">0</span>
         </div>
-        <button class="save">Save</button>
-    </div>
-    <div id="leader-table"></div>
+        <div class="save-score">
+            <div class="user-name-class">
+                <label for="user-name">Your Name</label>
+                <input type="text" id="user-name" name="user-name" class="text-input">
+            </div>
+            <button class="save">Save</button>
+        </div>
+        <div id="leader-table"></div>
+    </main>
+    <footer>
+        <div id="info-author">
+            Made with
+            <i class="fa-solid fa-heart" id="red-heart" aria-label="red heart sign"></i>
+            <i class="fa-regular fa-copyright" aria-label="copyright sign"></i>
+            2024 Irina Bogdanova
+        </div>
+        <a href="https://github.com/BogdanovaIV/" target="_blank" rel="noopener noreferrer"
+            aria-label="Visit my GitHub page (opens in a new tab)">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </footer>
     <!--Google charts-->
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <!--Font awesome kit-->

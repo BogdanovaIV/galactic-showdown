@@ -135,6 +135,7 @@ main {
     /* Enable flex properties for child elements */
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 /* index.html */
@@ -355,8 +356,8 @@ footer a {
 }
 
 #leader-table {
-    width: 95%;
-    margin: 5px;
+    width: 100%;
+    padding: 10px;
 }
 
 .center-text {
@@ -368,6 +369,7 @@ footer a {
     font-size: 150%;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .save-score {

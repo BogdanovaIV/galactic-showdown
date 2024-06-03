@@ -21,7 +21,7 @@ Second, you select the map where you will play.
 
 ![Maps](documentation/maps.png)
 
-You get 50 scores for your ships and 0 for the enemy ships. Click on the ship to shoot it. When you shoot your ship the number of your ships reduces, shooting the enemy ship adds the score of destroyed enemy ships.
+You get 50 scores for your ships and 0 for enemy ships. Click on the ship to shoot it. When you shoot your ship the number of your ships reduces, shooting an enemy ship adds the score of destroyed enemy ships.
 The total score is calculated as your ships plus destroyed enemy ships.
 The maximum score is 100.
 
@@ -79,13 +79,13 @@ The page is the game place where the user plays.
 
 ![The score bar (hover effect)](documentation/scorebar-game-hover.png)
 
-- The ships are created on the page and move down when their position goes off the page, they disappear.
+- The ships are created on the page and move down. When their position goes off the page, they disappear.
 
 ![The game](documentation/game.png)
 
 - When the user clicks on the game place, call a sound effect. If this place contains a ship, call explosion sound effect, calculate scores and the ship disappears.
 
-- At the end of the game, appear the message "Game over" with the user score and the button "Save" redirects to the page "Leaderboard".
+- At the end of the game, appear the message "Game over" with the user score, and the button "Save" redirects to the page "Leaderboard".
 
 ![The game over](documentation/game-over.png)
 
@@ -101,7 +101,7 @@ __The page "Leaderboard"__
 
 - The button "Home" has a hover effect: changing opacity.
 
-![The score bar (hover effect)](documentation/button-leaderboard-hover.png)
+![The score bar (hover effect)](documentation/leaderboard-button-home-hover.png)
 
 - The page has two conditions:
   1. Display the score. The user can find the other user scores sorted by the score.
@@ -120,7 +120,7 @@ __The page "Leaderboard"__
 
 ## Technologies Used
 
-- HTML - There are different elements, attributes and meta tags to structure content and optimize web pages for search engines. 
+- HTML - There are different elements, attributes, and meta tags to structure content and optimize web pages for search engines. 
 - CSS - It is used to style elements and create page layout, for animation and responsive design.
 - Javascript - It is used to change HTML depending on parameters and create a game process.
 - [Github](https://github.com/) - It is used to store versions.
@@ -134,12 +134,12 @@ __The page "Leaderboard"__
 
   - The Light-blue is used for the background. It adds calmness and professionalism.
   - The Blue color is applied to a font color and other details. It creates contrast and provides good readability.
-  - The Orange is used for a hover effect some buttons. It creates an emphasized effect and provides good readability.
+  - The Orange is used for a hover effect on some buttons. It creates an emphasized effect and provides good readability.
   - The Grey is used for the background of some buttons. It creates an emphasized effect, makes content more expressive and improves a visual user experience.
 
 ## Typography
 
-Font YSText is used for text content as first priority, which provides clarity and ease of perception and makes the text convenient to read. If YSText is unavailable, a browser will use Helvetica, then Arial, and finally standard Sans Serif to provide the capability of a wide range of devices and OS.
+Font YSText is used for text content as the first priority, which provides clarity and ease of perception and makes the text convenient to read. If YSText is unavailable, a browser will use Helvetica, then Arial, and finally standard Sans Serif to provide the capability of a wide range of devices and OS.
 
 ## Testing
 
@@ -181,9 +181,9 @@ To deploy the project locally, clone the repository. You can do this by running 
 
 ### Acknowledgments
 
-- [Juliia Konovalova](https://github.com/IuliiaKonovalova/) was a great mentor which helped me to reveal my abilities and gave valuable advice.
-- [Code Institute team](https://codeinstitute.net/) supported me and provided all the information which I needed.
-- [Github](https://github.com/) provides free access to a versioning system.
+- [Juliia Konovalova](https://github.com/IuliiaKonovalova/) was a great mentor who helped me to reveal my abilities and gave valuable advice.
+- [The Code Institute team](https://codeinstitute.net/) supported me and provided all the information that I needed.
+- [GitHub](https://github.com/) provides free access to a versioning system.
 - [ILoveImg](https://www.iloveimg.com/) provided me with a free service to compress images.
 - [Remove](https://www.remove.bg/) provided me with a free service to remove the background.
 - [Cut Audio](https://mp3cut.net/) provided me with a free service to cut audio.

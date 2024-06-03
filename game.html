@@ -17,9 +17,16 @@
 
 <body>
     <header class="game-header">
-        <a href="index.html" aria-label="The 'Home' link opens the start page and finish this game"><i
-                class="fa-solid fa-house-chimney"></i>
-        </a>
+        <div class="header-buttons">
+            <a href="index.html" aria-label="The 'Home' link opens the start page and finish this game"><i
+                    class="fa-solid fa-house-chimney"></i>
+            </a>
+            <input type="checkbox" id="volume" name="volume">
+            <label for="volume" class="volume-label" id="volume-label">
+                <i class="fa-solid fa-volume-xmark volume-off"></i>
+                <i class="fa-solid fa-volume-high volume-on"></i>
+            </label>
+        </div>
         <div class="scores">
             <div id="user-side" class="side-score">
                 <img>
@@ -31,16 +38,30 @@
             </div>
         </div>
     </header>
-
-    <div class="game-over hidden">
-        <h2>Game Over</h2>
-        <p>
-            Your score: <span id="total-score">0</span>
-        </p>
-        <button class="leaderboard">Save Score</button>
-    </div>
-
-    <div class="game-body"></div>
+    <aside>
+        <div class="game-over hidden">
+            <h2>Game Over</h2>
+            <p>
+                Your score: <span id="total-score">0</span>
+            </p>
+            <button class="leaderboard">Save Score</button>
+        </div>
+    </aside>
+    <main>
+        <div class="game-body"></div>
+    </main>
+    <footer>
+        <div id="info-author">
+            Made with
+            <i class="fa-solid fa-heart" id="red-heart" aria-label="red heart sign"></i>
+            <i class="fa-regular fa-copyright" aria-label="copyright sign"></i>
+            2024 Irina Bogdanova
+        </div>
+        <a href="https://github.com/BogdanovaIV/" target="_blank" rel="noopener noreferrer"
+            aria-label="Visit my GitHub page (opens in a new tab)">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </footer>
     <!--Font awesome kit-->
     <script src="https://kit.fontawesome.com/dd22fe1336.js" crossorigin="anonymous"></script>
     <!--Inner scripts-->

@@ -11,6 +11,7 @@ h2 {
     margin-top: 10px;
 }
 
+/* body */
 body {
     min-height: 100vh;
     display: flex;
@@ -29,6 +30,7 @@ header {
     justify-content: flex-start;
     width: 100%;
     letter-spacing: 1px;
+    z-index: 99;
 }
 
 header h1 {
@@ -73,6 +75,59 @@ header a:hover,
     display: inline;
 }
 
+/* game.html */
+.game-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 45px;
+    box-shadow: 0 3px 3px #7d919ea0;
+    background-color: #f0f8ff97;
+}
+
+.scores {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.side-score {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 3px 0 0 5px;
+    padding: 5px;
+}
+
+.side-score img {
+    width: 40px;
+    height: auto;
+    padding: 2px;
+    border: 2px solid #0B3D91;
+    border-radius: 50%;
+    background-color: #a9a9a9b6;
+}
+
+.side-score p {
+    width: 40px;
+    margin-left: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+#user-side {
+    color: #ff4400;
+}
+
+#user-side img {
+    background-color: #ff4400b2;
+}
+
 /* Main */
 main {
     /* Enlarge main element to push footer down*/
@@ -112,13 +167,12 @@ main {
     padding: 0.5rem;
     border-radius: 50%;
     background-color: #a9a9a9b6;
+    transform: scale(0.90);
 }
 
 .sides input[type="radio"]:checked+label img {
     background-color: #ff4400b2;
-    transform: scale(0.95);
     box-shadow: inset 0 0 8px rgba(0, 0, 0);
-    border: none;
 }
 
 .sides img:hover {
@@ -181,27 +235,6 @@ main {
     border: 3px solid #ff4400b2;
 }
 
-/* footer */
-footer {
-    margin: 5px 0;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-footer a {
-    text-decoration: none;
-    color: #CC2C1F;
-    font-size: 120%;
-    padding: 0 15px;
-}
-
-#red-heart {
-    color: #CC2C1F;
-}
-
 /* game.html */
 .game-cursor {
     /*Use the special cursor for the game place*/
@@ -216,74 +249,8 @@ footer a {
     background: url('../images/map2.webp') no-repeat center/cover;
 }
 
-/* header */
-.game-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    z-index: 99;
-    width: 100%;
-    height: 45px;
-    box-shadow: 0 3px 3px #7d919ea0;
-    background-color: #f0f8ff97;
-}
-
-.game-header a {
-    margin-left: 10px;
-    text-decoration: none;
-    color: inherit;
-    font-size: 180%;
-}
-
-.game-header a :hover {
-    opacity: 0.6;
-}
-
-.scores {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-}
-
-.side-score {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 3px 0 0 5px;
-    padding: 5px;
-}
-
-.side-score img {
-    width: 40px;
-    height: auto;
-    padding: 2px;
-    border: 2px solid #0B3D91;
-    border-radius: 50%;
-    background-color: #a9a9a9b6;
-}
-
-.side-score p {
-    width: 40px;
-    margin-left: 10px;
-    text-align: center;
-    font-weight: bold;
-    font-size: large;
-}
-
-#user-side {
-    color: #ff4400;
-}
-
-#user-side img {
-    background-color: #ff4400b2;
-}
-
 .game-body {
-    width: 100%;
-    height: 100%;
-    position: relative;
+    z-index: 98;
 }
 
 .ship {
@@ -321,6 +288,29 @@ footer a {
     background: url('../images/x-wing.webp') no-repeat center/cover;
 }
 
+/* footer */
+footer {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #CC2C1F;
+    font-size: 120%;
+    padding: 0 15px;
+}
+
+#red-heart {
+    color: #CC2C1F;
+}
+
+/* aside */
+/* game.html */
 .game-over {
     flex: 1 0 auto;
     justify-content: center;
@@ -418,7 +408,8 @@ footer a {
 
 /* Media query: tablets and larger(768px and up)*/
 @media screen and (min-width: 768px) {
-
+    /* Main */
+    /* index.html */
     .sides img {
         width: 5vw;
     }

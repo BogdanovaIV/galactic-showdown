@@ -158,6 +158,10 @@ h2 {
     font-size: 180%;
 }
 
+.game-header a :hover {
+    opacity: 0.6;
+}
+
 .scores {
     display: flex;
     flex-direction: row;
@@ -176,7 +180,6 @@ h2 {
     width: 40px;
     height: auto;
     padding: 2px;
-
     border: 2px solid #0B3D91;
     border-radius: 50%;
     background-color: #a9a9a9b6;
@@ -270,6 +273,10 @@ h2 {
     margin-left: 10px;
     font-size: 180%;
     position: fixed;
+}
+
+.leader-heading a :hover {
+    opacity: 0.6;
 }
 
 .leader-heading>h1 {

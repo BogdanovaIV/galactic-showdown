@@ -110,13 +110,15 @@ main {
     height: auto;
     margin: 5px;
     padding: 0.5rem;
-    border: 2px solid #0B3D91;
     border-radius: 50%;
     background-color: #a9a9a9b6;
 }
 
 .sides input[type="radio"]:checked+label img {
     background-color: #ff4400b2;
+    transform: scale(0.95);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0);
+    border: none;
 }
 
 .sides img:hover {

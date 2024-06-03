@@ -38,3 +38,51 @@ The opening of all pages and the correct operation of all links and buttons were
 | Edit the "Name" field | Edit the "Name" field | the "Name" field allows the user to fill in the name. | Yes | Yes | - |
 | The "Save" button | Click on the "Save" button | The system saves information in the file and updates the "Leaderboard" table| Yes | No | The information is not saved in leaderboard.json |
 | The "Save" button is hovered over on large devices | Hover over the "Save" button | The "Save" button changes color | Yes | Yes | - |
+
+__User Interface Testing__
+
+The showing objects on different devices were tested. Those look attractive and display properly.
+
+ - The "Home" page was tested on different devices be different users. Objects look attractive and display properly.
+
+   ![User interface testing of the "Home" page](documentation/different-devices-home.png)
+
+- The "Game" page was tested on different devices be different users. Objects ook attractive and display properly.
+
+   ![User interface testing of the "Game" page](documentation/different-devices-game.png)
+
+- The "Leaderboard" page was tested on different devices be different users. Objects ook attractive and display properly.
+
+   ![User interface testing of the "Leaderboard" page](documentation/different-devices-leaderboard.png)
+
+__Compatibility Testing__
+
+The website was tested on different browsers such as Chrome, FireFox, Microsoft Edge. All objects function properly and display correctly. 
+
+ - Chrome
+
+  ![Compatibility testing Chrome](documentation/compatibility-chrome.png)
+- FireFox
+
+  ![Compatibility testing FireFox](documentation/compatibility-firefox.png)
+
+- Microsoft Edge
+
+  ![Compatibility testing Microsoft Edge](documentation/compatibility-edge.png)
+
+
+__Performance Testing__
+
+Performance checking was tested by LightHouse.
+
+  The "Home" page:
+
+  ![LightHouse report of Home page](documentation/light-house-home.png)
+
+  The "Game" page:
+
+  ![LightHouse report of Game page](documentation/light-house-game.png)
+
+  The "Leaderboard" page:
+
+  ![LightHouse report of Leaderboard page](documentation/light-house-leaderboard.png)

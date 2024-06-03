@@ -118,3 +118,73 @@ __The page "Leaderboard"__
   
   ***Attention: the ability to save score is in development!!!***
 
+## Technologies Used
+
+- HTML - There are different elements, attributes and meta tags to structure content and optimize web pages for search engines. 
+- CSS - It is used to style elements and create page layout, for animation and responsive design.
+- Javascript - It is used to change HTML depending on parameters and create a game process.
+- [Github](https://github.com/) - It is used to store versions.
+- [ILoveImg](https://www.iloveimg.com/) - It is used to resize and shrink images.
+- [Font Awesome](https://fontawesome.com/) - It is used to paste icons, improve appearance and for web-page functionality. 
+
+## Design
+
+## Color Scheme
+  ![Color scheme](documentation/color-scheme.png)
+
+  - The Light-blue is used for the background. It adds calmness and professionalism.
+  - The Blue color is applied to a font color and other details. It creates contrast and provides good readability.
+  - The Orange is used for a hover effect some buttons. It creates an emphasized effect and provides good readability.
+  - The Grey is used for the background of some buttons. It creates an emphasized effect, makes content more expressive and improves a visual user experience.
+
+## Typography
+
+Font YSText is used for text content as first priority, which provides clarity and ease of perception and makes the text convenient to read. If YSText is unavailable, a browser will use Helvetica, then Arial, and finally standard Sans Serif to provide the capability of a wide range of devices and OS.
+
+## Testing
+
+Please refer to the [TESTING.md](TESTING.md) file for all test-related documentation.
+
+## Deployment
+
+ - The site was deployed to GitHub pages. The steps to deploy are as follows: 
+ - In the GitHub repository, navigate to the Settings tab 
+ - From the source section drop-down menu, select the Main branch
+ - Once the Main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
+
+The live link can be found [here](https://bogdanovaiv.github.io/galactic-showdown/)
+
+## Local Deployment
+
+To deploy the project locally, clone the repository. You can do this by running the following command in your terminal:
+
+`git clone https://github.com/BogdanovaIV/galactic-showdown.git`
+
+## Future Improvements
+
+ - Save the user score.
+ - Add the ship level and change the number of shoots to destroy a ship depending on this level.
+ - Add ships which can move horizontally.
+
+## Credits 
+
+### Content 
+
+- The idea of ​​the game is taken from the movie Star Wars.
+- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
+
+### Media
+
+- The photos used on all pages are from [This Open Source site](https://pxhere.com).
+
+- The audio used on all pages is from [This Open Source site](https://freesound.org/).
+
+### Acknowledgments
+
+- [Juliia Konovalova](https://github.com/IuliiaKonovalova/) was a great mentor which helped me to reveal my abilities and gave valuable advice.
+- [Code Institute team](https://codeinstitute.net/) supported me and provided all the information which I needed.
+- [Github](https://github.com/) provides free access to a versioning system.
+- [ILoveImg](https://www.iloveimg.com/) provided me with a free service to compress images.
+- [Remove](https://www.remove.bg/) provided me with a free service to remove the background.
+- [Cut Audio](https://mp3cut.net/) provided me with a free service to cut audio.
+- [Compress Audio](https://www.freeconvert.com/mp3-compressor) provided me with a free service to compress audio.

@@ -205,10 +205,10 @@ function getEnemySide(sideName) {
  */
 function getParametersImageSideByName(sideName) {
     if (sideName === "light-side") {
-        return ["./assets/images/yoda.webp", " is the Light."];
+        return ["assets/images/yoda.webp", " is the Light."];
     }
 
-    return ["./assets/images/darth-vader.webp", " is the Dark."];
+    return ["assets/images/darth-vader.webp", " is the Dark."];
 }
 
 /**

@@ -7,8 +7,8 @@ let enemyShips = [];
 let lifeShips = 0;
 
 let shipsPositions = [];
-let screenExpansionFactor = 2;
-let lengthShip = 50; //Set equal width class "ship"  
+const screenExpansionFactor = 2;
+const lengthShip = 50; //Set equal width class "ship"  
 
 // Add listener events to set images before they load.
 document.addEventListener("readystatechange", function () {
@@ -16,7 +16,7 @@ document.addEventListener("readystatechange", function () {
         const params = getQueryParams();
         // Set map
         if (params.hasOwnProperty("map")) {
-            let bodyTeg = document.getElementsByTagName("body")[0];
+            const bodyTeg = document.getElementsByTagName("body")[0];
             bodyTeg.className = params["map"] + " game-cursor";
         }
         //Set user and enemy side
@@ -25,6 +25,12 @@ document.addEventListener("readystatechange", function () {
             fillParametersForSide("user-side", params["side"], userShips, "Your side");
             //Enemy side
             fillParametersForSide("enemy-side", getEnemySide(params["side"]), enemyShips, "The enemy side");
+        }
+        //Set volume
+        if (params.hasOwnProperty("volume")) {
+            const volume = document.getElementById("volume");
+            console.log(params);
+            volume.checked = params["volume"] === "true" ? true : false;
         }
     }
 });
@@ -43,7 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Call sound "laser gun shot". The sounds are overlap each other.       
     document.getElementsByTagName("body")[0].addEventListener("click", function () {
-        CreatePlayAudio('assets/audio/laser-gun-shot.mp3');
+        if (document.getElementById("volume").checked) {
+            CreatePlayAudio('assets/audio/laser-gun-shot.mp3');
+        }
     });
 });
 
@@ -53,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
  */
 function changeTopPosition() {
     //Go down "top"
-    let currentTop = parseInt(this.style.top);
+    const currentTop = parseInt(this.style.top);
     this.style.top = (currentTop + 1) + 'px';
     //Check "top" and remove element that is outside the range 
     if (parseInt(this.style.top) >= (window.innerHeight - lengthShip)) {
@@ -70,7 +78,7 @@ function changeTopPosition() {
  * the returned boolean
  */
 function checkOverlap(newShip) {
-    for (let position of shipsPositions) {
+    for (const position of shipsPositions) {
         if (
             newShip.left < position.right &&
             newShip.right > position.left &&
@@ -134,7 +142,7 @@ function createShip() {
     shipsPositions.push(ship);
 
     //Create ship
-    let shipButton = document.createElement("button");
+    const shipButton = document.createElement("button");
     shipButton.className = "ship " + classShip;
     shipButton.id = idName;
     shipButton.style.top = top.toString() + "px";
@@ -146,7 +154,7 @@ function createShip() {
     }, 50);
 
     // Add element in body
-    let gameBody = document.getElementsByClassName("game-body")[0];
+    const gameBody = document.getElementsByClassName("game-body")[0];
     gameBody.appendChild(shipButton);
 
     //Add shoot ship
@@ -160,7 +168,9 @@ function createShip() {
  */
 function shootAtShip(ship) {
     //Call sound "explosion". The sounds are overlap each other.
-    CreatePlayAudio('assets/audio/explosion.mp3');
+    if (document.getElementById("volume").checked) {
+        CreatePlayAudio('assets/audio/explosion.mp3');
+    }
     let idScore = "enemy-score";
     if (ship.id.includes("user-side")) {
         idScore = "user-score";
@@ -220,9 +230,9 @@ function fillShips(sideName, ships) {
  * image side 
  */
 function fillParametersForSide(id, sideName, ships, altText) {
-    let side = document.getElementById(id);
-    let imageSide = side.children[0];
-    let parametersImageSide = getParametersImageSideByName(sideName);
+    const side = document.getElementById(id);
+    const imageSide = side.children[0];
+    const parametersImageSide = getParametersImageSideByName(sideName);
     imageSide.src = parametersImageSide[0];
     imageSide.alt = altText + parametersImageSide[1];
     fillShips(sideName, ships);
@@ -235,8 +245,8 @@ function fillParametersForSide(id, sideName, ships, altText) {
 function showResult() {
     if (lifeShips === 0) {
         document.getElementsByClassName("game-over")[0].className = "game-over";
-        let userScore = parseInt(document.getElementById("user-score").innerText);
-        let enemyScore = parseInt(document.getElementById("enemy-score").innerText);
+        const userScore = parseInt(document.getElementById("user-score").innerText);
+        const enemyScore = parseInt(document.getElementById("enemy-score").innerText);
         document.getElementById("total-score").innerText = enemyScore + userScore;
     }
 }

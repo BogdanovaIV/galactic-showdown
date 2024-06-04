@@ -53,7 +53,18 @@ document.addEventListener("DOMContentLoaded", function () {
             CreatePlayAudio('assets/audio/laser-gun-shot.mp3');
         }
     });
+
+    //Set the balance of ships
+    setBalanceShips(lifeShips);
 });
+
+/**
+ * Set the balance of ships
+ */
+function setBalanceShips(balanceShips){
+    const balance = document.getElementById("balance");
+    balance.innerText = balanceShips;
+}
 
 /**
  * Change top position and remove element that is outside the range
@@ -249,6 +260,8 @@ function showResult() {
         const enemyScore = parseInt(document.getElementById("enemy-score").innerText);
         document.getElementById("total-score").innerText = enemyScore + userScore;
     }
+    //Set the balance of ships
+    setBalanceShips(lifeShips);
 }
 
 /**

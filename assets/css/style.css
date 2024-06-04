@@ -289,6 +289,15 @@ main {
     background: url('../images/x-wing.webp') no-repeat center/cover;
 }
 
+#balance-ships {
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    top: 50px;
+    right: 5px;
+    color: #f0f8ff97;
+    font-weight: bold;
+}
 /* footer */
 footer {
     margin: 5px 0;

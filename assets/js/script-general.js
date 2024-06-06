@@ -1,3 +1,24 @@
+// Add listener events in buttons after loading the page.
+document.addEventListener("DOMContentLoaded", function () {
+
+    const params = getQueryParams();
+    console.log(params);
+    //Set volume
+    if (params.hasOwnProperty("volume")) {
+        const volume = document.getElementById("volume");
+        volume.checked = params["volume"] === "true" ? true : false;
+    }
+
+    const homeLink = document.getElementById("home-link");
+    if (homeLink) {
+        homeLink.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default action (navigation)
+            const volume = document.getElementById("volume");
+            window.location.href = `index.html?volume=${volume.checked}`;
+        });
+    }
+});
+
 /**
  * Get random integer number ranging from min to max
  * the returned integer number 

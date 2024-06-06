@@ -268,5 +268,6 @@ function showResult() {
  * Open leaderboard with score in the current window 
  */
 function openLeaderboardPage() {
-    window.location.href = `leaderboard.html?type=add-user&score=${document.getElementById("total-score").innerText}`;
+    const volume = document.getElementById("volume");
+    window.location.href = `leaderboard.html?type=add-user&score=${document.getElementById("total-score").innerText}&volume=${volume.checked}`;
 }

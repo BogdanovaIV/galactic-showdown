@@ -14,12 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+    const gameRulesLink = document.getElementById("game-rules-link");
+    gameRulesLink.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the default action (navigation)
+        const volume = document.getElementById("volume");
+        window.location.href = `game-rules.html?volume=${volume.checked}`;
+    });
 });
 
 // Functions to open pages
 
 function openLeaderboardPage() {
-    window.location.href = "leaderboard.html?type=only-show";
+    const volume = document.getElementById("volume");
+    window.location.href = `leaderboard.html?type=only-show&volume=${volume.checked}`;
 }
 
 function openGamePage(parameterMap, parameterSide, volume) {

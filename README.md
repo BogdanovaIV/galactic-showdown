@@ -11,15 +11,15 @@ The game can be accessed by this [link](https://bogdanovaiv.github.io/galactic-s
 ## Game Rules
 First, you have to select one of the sides. The Light Side <img src="assets/images/yoda.webp" alt = "Yoda" width="50px"> has those ships:
 
-![The Light Side ships](documentation/light-side-ships.png)
+![The Light Side ships](assets/images/light-side-ships.png)
 
 The Dark Side <img src="assets/images/darth-vader.webp" alt = "Darth Vader" width="50px"> has those ships:
 
-![The Dark Side ships](documentation/dark-side-ships.png)
+![The Dark Side ships](assets/images/dark-side-ships.png)
 
 Second, you select the map where you will play.
 
-![Maps](documentation/maps.png)
+![Maps](assets/images/maps.png)
 
 You get 50 scores for your ships and 0 for enemy ships. Click on the ship to shoot it. When you shoot your ship the number of your ships reduces, shooting an enemy ship adds the score of destroyed enemy ships.
 The total score is calculated as your ships plus destroyed enemy ships.

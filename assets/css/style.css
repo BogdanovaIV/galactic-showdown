@@ -11,6 +11,12 @@ h2 {
     margin-top: 10px;
 }
 
+ul {
+    list-style-position: inside;
+    list-style-type: disclosure-closed;
+    margin: 5px;
+}
+
 /* body */
 body {
     min-height: 100vh;
@@ -298,6 +304,17 @@ main {
     color: #f0f8ff97;
     font-weight: bold;
 }
+
+/* game-rules.html */
+.gr-small-image {
+    width: 50px;
+}
+
+.gr-big-image {
+    width: 100%;
+    height: auto;
+}
+
 /* footer */
 footer {
     margin: 5px 0;
@@ -419,6 +436,7 @@ footer a {
 
 /* Media query: tablets and larger(768px and up)*/
 @media screen and (min-width: 768px) {
+
     /* Main */
     /* index.html */
     .sides img {
@@ -438,5 +456,11 @@ footer a {
 
     .leaderboard {
         padding: 1rem 1rem;
+    }
+
+    /* game-rules.html */
+    .gr-big-image {
+        width: 40%;
+        height: auto;
     }
 }

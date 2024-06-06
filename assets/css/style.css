@@ -58,6 +58,7 @@ header a:hover,
 }
 
 .header-buttons {
+    z-index: 98;
     font-size: 160%;
 }
 
@@ -142,6 +143,8 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
+    /* Add margin for all gages without Game page*/
+    margin-top: 50px;
 }
 
 /* index.html */
@@ -243,6 +246,11 @@ main {
 }
 
 /* game.html */
+.game-main {
+    /* Clear the value*/
+    margin-top: 0;
+}
+
 .game-cursor {
     /*Use the special cursor for the game place*/
     cursor: url('../images/target.png'), auto;
@@ -315,72 +323,7 @@ main {
     height: auto;
 }
 
-/* footer */
-footer {
-    margin: 5px 0;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-footer a {
-    text-decoration: none;
-    color: #CC2C1F;
-    font-size: 120%;
-    padding: 0 15px;
-}
-
-#red-heart {
-    color: #CC2C1F;
-}
-
-/* aside */
-/* game.html */
-.game-over {
-    flex: 1 0 auto;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-size: 150%;
-}
-
-.game-over p {
-    margin: 1rem;
-    font-weight: bold;
-}
-
 /* leaderboard.html */
-
-.leader-heading {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.leader-heading a {
-    text-decoration: none;
-    color: inherit;
-    margin-left: 10px;
-    font-size: 180%;
-    position: fixed;
-}
-
-.leader-heading a :hover {
-    opacity: 0.6;
-}
-
-.leader-heading>h1 {
-    text-align: center;
-    margin: 0;
-    width: 100%;
-}
-
 #leader-table {
     width: 100%;
     padding: 10px;
@@ -429,6 +372,44 @@ footer a {
     background-color: #ff4400b2;
 }
 
+/* footer */
+footer {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #CC2C1F;
+    font-size: 120%;
+    padding: 0 15px;
+}
+
+#red-heart {
+    color: #CC2C1F;
+}
+
+/* aside */
+/* game.html */
+.game-over {
+    flex: 1 0 auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 150%;
+}
+
+.game-over p {
+    margin: 1rem;
+    font-weight: bold;
+}
+
 /* General class which applies in the end*/
 .hidden {
     display: none;
@@ -436,6 +417,15 @@ footer a {
 
 /* Media query: tablets and larger(768px and up)*/
 @media screen and (min-width: 768px) {
+
+    /* Header */
+    /* leaderboard.html */
+    .game-header h1 {
+        position: absolute;
+        text-align: center;
+        margin: 0;
+        width: 100%;
+    }
 
     /* Main */
     /* index.html */

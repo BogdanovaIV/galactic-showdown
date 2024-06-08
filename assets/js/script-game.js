@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /**
  * Set the balance of ships
  */
-function setBalanceShips(balanceShips){
+function setBalanceShips(balanceShips) {
     const balance = document.getElementById("balance");
     balance.innerText = balanceShips;
 }
@@ -158,7 +158,11 @@ function createShip() {
     shipButton.id = idName;
     shipButton.style.top = top.toString() + "px";
     shipButton.style.left = left.toString() + "px";
-    shipButton.textContent = textButton;
+
+    // Add accessible features
+    shipButton.setAttribute("aria-label", textButton); // ARIA label for screen readers
+    shipButton.setAttribute("title", textButton); // Tooltip text for additional context
+
     //Add the event that changes position
     shipButton.intervalId = setInterval(function () {
         changeTopPosition.call(shipButton);

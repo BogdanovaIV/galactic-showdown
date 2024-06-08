@@ -8,9 +8,9 @@ let dataTable;
 // Add listener events before the page loads.
 document.addEventListener("readystatechange", function () {
     const params = getQueryParams();
-    if (params.hasOwnProperty("type") && params["type"] === "only-show") {
-        document.getElementsByClassName("user-score")[0].className = "user-score hidden";
-        document.getElementsByClassName("save-score")[0].className = "save-score hidden";
+    if (params.hasOwnProperty("type") && params["type"] === "add-user") {
+        document.getElementsByClassName("user-score")[0].className = "user-score";
+        document.getElementsByClassName("save-score")[0].className = "save-score";
     }
     if (params.hasOwnProperty("score")) {
         document.getElementById("total-score").innerText = params["score"];

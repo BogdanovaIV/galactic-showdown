@@ -105,6 +105,10 @@ Performance checking was tested by LightHouse.
 
   ![LightHouse report of Leaderboard page](documentation/light-house-leaderboard.png)
 
+  The Game Rules page:
+
+  ![LightHouse report of Game Rules page](documentation/light-house-game-rules.png)
+
 __Code Quality__
 
 Quality checking was tested by [Markup validator service](https://validator.w3.org/) and [CSS validator service](https://jigsaw.w3.org/css-validator/).

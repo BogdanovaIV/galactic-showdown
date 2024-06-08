@@ -58,74 +58,134 @@ function CreatePlayAudio(path) {
  * Using a simple substitution cipher, where each digit (0-9) is replaced by another digit according to a predefined mapping.
  * Return array with substitutionMap and reverseSubstitutionMap
  */
+// Function after using obfuscator
 function substitutionMaps() {
-    const substitutionMap = {
-        0: 7,
-        1: 4,
-        2: 9,
-        3: 2,
-        4: 6,
-        5: 1,
-        6: 8,
-        7: 0,
-        8: 5,
-        9: 3
-    };
-    const reverseSubstitutionMap = {
-        7: 0,
-        4: 1,
-        9: 2,
-        2: 3,
-        6: 4,
-        1: 5,
-        8: 6,
-        0: 7,
-        5: 8,
-        3: 9
-    };
-    const maps = [substitutionMap, reverseSubstitutionMap];
-    return maps;
+    const _0x3337a6 = {
+            0x0: 0x7,
+            0x1: 0x4,
+            0x2: 0x9,
+            0x3: 0x2,
+            0x4: 0x6,
+            0x5: 0x1,
+            0x6: 0x8,
+            0x7: 0x0,
+            0x8: 0x5,
+            0x9: 0x3
+        },
+        _0x56012c = {
+            0x7: 0x0,
+            0x4: 0x1,
+            0x9: 0x2,
+            0x2: 0x3,
+            0x6: 0x4,
+            0x1: 0x5,
+            0x8: 0x6,
+            0x0: 0x7,
+            0x5: 0x8,
+            0x3: 0x9
+        },
+        _0x23e3c3 = [_0x3337a6, _0x56012c];
+    return _0x23e3c3;
 }
 
 /**
+ * Function "encrypt"
  * Encrypt the number.
  * Return encrypted number
  */
-function encrypt(number, numberDigits) {
-    let numberStr = number.toString().padStart(numberDigits, '0'); // Pad the number to ensure it has three digits
-    let encryptedStr = '';
-    const maps = substitutionMaps();
-    const substitutionMap = maps[0];
-    for (let i = 0; i < numberStr.length; i++) {
-        let digit = parseInt(numberStr[i]);
-        // Rotate the digit by its position (i)
-        let rotatedDigit = (digit + i) % 10;
-        // Substitute the digit
-        let encryptedDigit = substitutionMap[rotatedDigit];
-        encryptedStr += encryptedDigit.toString();
+// Function after using obfuscator
+function _0x6308() {
+    const _0x16a404 = ['1635277PleLYQ', 'length', '54624kHBHMr', '37890oqGpgv', '5786NIiart', '351eLWZbb', '4842555fFBLhB', '362700hNmliK', '291934LPWHlv', '6ijpdDe', '3OvFmta', 'toString', 'padStart', '212157NolMEj'];
+    _0x6308 = function () {
+        return _0x16a404;
+    };
+    return _0x6308();
+}(function (_0x50b6c1, _0x5a6893) {
+    const _0x2a76cf = _0x87af,
+        _0x59c9a1 = _0x50b6c1();
+    while (!![]) {
+        try {
+            const _0x2b98e3 = -parseInt(_0x2a76cf(0xe0)) / 0x1 + parseInt(_0x2a76cf(0xdb)) / 0x2 * (parseInt(_0x2a76cf(0xdd)) / 0x3) + parseInt(_0x2a76cf(0xda)) / 0x4 + parseInt(_0x2a76cf(0xd9)) / 0x5 * (-parseInt(_0x2a76cf(0xdc)) / 0x6) + -parseInt(_0x2a76cf(0xe1)) / 0x7 + parseInt(_0x2a76cf(0xd5)) / 0x8 * (-parseInt(_0x2a76cf(0xd8)) / 0x9) + parseInt(_0x2a76cf(0xd6)) / 0xa * (parseInt(_0x2a76cf(0xd7)) / 0xb);
+            if (_0x2b98e3 === _0x5a6893) break;
+            else _0x59c9a1['push'](_0x59c9a1['shift']());
+        } catch (_0x4b13ef) {
+            _0x59c9a1['push'](_0x59c9a1['shift']());
+        }
     }
-
-    return encryptedStr;
+}(_0x6308, 0x860dd));
+// Function after using obfuscator
+function _0x87af(_0x54eb4b, _0x5991b1) {
+    const _0x63088c = _0x6308();
+    return _0x87af = function (_0x87af2c, _0x4dd3c8) {
+        _0x87af2c = _0x87af2c - 0xd4;
+        let _0x17e4a2 = _0x63088c[_0x87af2c];
+        return _0x17e4a2;
+    }, _0x87af(_0x54eb4b, _0x5991b1);
+}
+// Function after using obfuscator
+function encrypt(_0x58a6f8, _0x5806f3) {
+    const _0xde8df0 = _0x87af;
+    let _0x164f27 = _0x58a6f8[_0xde8df0(0xde)]()[_0xde8df0(0xdf)](_0x5806f3, '0'),
+        _0x5a7962 = '';
+    const _0x472c09 = substitutionMaps(),
+        _0x24f917 = _0x472c09[0x0];
+    for (let _0x260869 = 0x0; _0x260869 < _0x164f27[_0xde8df0(0xd4)]; _0x260869++) {
+        let _0x4e2643 = parseInt(_0x164f27[_0x260869]),
+            _0xfe8309 = (_0x4e2643 + _0x260869) % 0xa,
+            _0x240f0a = _0x24f917[_0xfe8309];
+        _0x5a7962 += _0x240f0a[_0xde8df0(0xde)]();
+    }
+    return _0x5a7962;
 }
 
 /**
+ * Function "Decrypt"
  * Decrypt the number.
  * Return decrypted number
  */
-function decrypt(encryptedNumber, numberDigits) {
-    let encryptedStr = encryptedNumber.toString().padStart(numberDigits, '0'); // Pad the encrypted number to ensure it has three digits
-    let decryptedStr = '';
-    const maps = substitutionMaps();
-    const reverseSubstitutionMap = maps[1];
-
-    for (let i = 0; i < encryptedStr.length; i++) {
-        let digit = parseInt(encryptedStr[i]);
-        // Reverse substitute the digit
-        let substitutedDigit = reverseSubstitutionMap[digit];
-        // Reverse the rotation
-        let originalDigit = (substitutedDigit - i + 10) % 10;
-        decryptedStr += originalDigit.toString();
+// Function after using obfuscator
+(function (_0x2a9d76, _0x63fd09) {
+    const _0xefd0cd = _0x27bb,
+        _0xef259c = _0x2a9d76();
+    while (!![]) {
+        try {
+            const _0x17ce85 = -parseInt(_0xefd0cd(0xa5)) / 0x1 * (-parseInt(_0xefd0cd(0xa6)) / 0x2) + parseInt(_0xefd0cd(0xac)) / 0x3 + -parseInt(_0xefd0cd(0xa4)) / 0x4 + -parseInt(_0xefd0cd(0xab)) / 0x5 * (-parseInt(_0xefd0cd(0xaa)) / 0x6) + parseInt(_0xefd0cd(0xa8)) / 0x7 + parseInt(_0xefd0cd(0xa9)) / 0x8 * (parseInt(_0xefd0cd(0xa2)) / 0x9) + parseInt(_0xefd0cd(0xa7)) / 0xa * (-parseInt(_0xefd0cd(0xa0)) / 0xb);
+            if (_0x17ce85 === _0x63fd09) break;
+            else _0xef259c['push'](_0xef259c['shift']());
+        } catch (_0x306711) {
+            _0xef259c['push'](_0xef259c['shift']());
+        }
     }
-
-    return parseInt(decryptedStr, 10); // Convert the decrypted string back to a number to cut extra zeros
+}(_0x5974, 0xce56e));
+// Function after using obfuscator
+function _0x27bb(_0x17feed, _0x382e4a) {
+    const _0x59743b = _0x5974();
+    return _0x27bb = function (_0x27bb7b, _0x14befe) {
+        _0x27bb7b = _0x27bb7b - 0xa0;
+        let _0x2d4c9e = _0x59743b[_0x27bb7b];
+        return _0x2d4c9e;
+    }, _0x27bb(_0x17feed, _0x382e4a);
+}
+// Function after using obfuscator
+function _0x5974() {
+    const _0x2770d9 = ['5830072csbVQk', '1513AFbYkP', '1674LPbwOo', '200ODvcYI', '5485018TlCqnV', '72ZTwUsh', '12zNtXij', '3246945dpMnLF', '4169751lFcGeG', 'toString', '1658096lKcMFr', 'padStart', '578754bBHnoP', 'length'];
+    _0x5974 = function () {
+        return _0x2770d9;
+    };
+    return _0x5974();
+}
+// Function after using obfuscator
+function decrypt(_0x5f7ef5, _0x276b32) {
+    const _0xe46cd8 = _0x27bb;
+    let _0x389206 = _0x5f7ef5[_0xe46cd8(0xad)]()[_0xe46cd8(0xa1)](_0x276b32, '0'),
+        _0x383a61 = '';
+    const _0x320b43 = substitutionMaps(),
+        _0x440a9e = _0x320b43[0x1];
+    for (let _0x463dc8 = 0x0; _0x463dc8 < _0x389206[_0xe46cd8(0xa3)]; _0x463dc8++) {
+        let _0x150561 = parseInt(_0x389206[_0x463dc8]),
+            _0xc85aa2 = _0x440a9e[_0x150561],
+            _0x875328 = (_0xc85aa2 - _0x463dc8 + 0xa) % 0xa;
+        _0x383a61 += _0x875328[_0xe46cd8(0xad)]();
+    }
+    return parseInt(_0x383a61, 0xa);
 }

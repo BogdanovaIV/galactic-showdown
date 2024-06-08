@@ -269,5 +269,5 @@ function showResult() {
  */
 function openLeaderboardPage() {
     const volume = document.getElementById("volume");
-    window.location.href = `leaderboard.html?type=add-user&score=${document.getElementById("total-score").innerText}&volume=${volume.checked}`;
+    window.location.href = `leaderboard.html?type=add-user&score=${encrypt(document.getElementById("total-score").innerText, 6)}&volume=${volume.checked}`;
 }

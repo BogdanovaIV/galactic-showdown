@@ -13,7 +13,7 @@ document.addEventListener("readystatechange", function () {
         document.getElementsByClassName("save-score")[0].className = "save-score";
     }
     if (params.hasOwnProperty("score")) {
-        document.getElementById("total-score").innerText = params["score"];
+        document.getElementById("total-score").innerText = decrypt(params["score"], 6);
     }
     document.getElementsByClassName("save")[0].addEventListener("click", function () {
         updateFile();

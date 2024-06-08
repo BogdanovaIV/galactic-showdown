@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //Call sound "laser gun shot". The sounds are overlap each other.       
     document.getElementsByTagName("body")[0].addEventListener("click", function () {
         if (document.getElementById("volume").checked) {
-            CreatePlayAudio('assets/audio/laser-gun-shot.mp3');
+            createPlayAudio('assets/audio/laser-gun-shot.mp3');
         }
     });
 
@@ -180,7 +180,7 @@ function createShip() {
 function shootAtShip(ship) {
     //Call sound "explosion". The sounds are overlap each other.
     if (document.getElementById("volume").checked) {
-        CreatePlayAudio('assets/audio/explosion.mp3');
+        createPlayAudio('assets/audio/explosion.mp3');
     }
     let idScore = "enemy-score";
     if (ship.id.includes("user-side")) {

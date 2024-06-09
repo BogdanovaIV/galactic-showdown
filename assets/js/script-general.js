@@ -56,7 +56,7 @@ function createPlayAudio(path) {
 /**
  * Create Substitution Map and Reverse Substitution Map.
  * Using a simple substitution cipher, where each digit (0-9) is replaced by another digit according to a predefined mapping.
- * Return array with substitutionMap and reverseSubstitutionMap
+ * Return array witgih substitutionMap and reverseSubstitutionMap
  */
 // Function after using obfuscator
 function substitutionMaps() {

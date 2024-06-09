@@ -18,13 +18,22 @@ import {
     limit
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+// Inner scripts
+import {
+    openLeaderboardPage,
+    addGeneralListeners,
+    getQueryParams,
+    decrypt
+} from "./script-general.js";
+
 let dataTable;
 
 // Database to store scores
 const db = initializeDataBase();
 
 // Add listener events before the page loads.
-document.addEventListener("readystatechange", function () {
+document.addEventListener("DOMContentLoaded", function () {
+    addGeneralListeners();
     const params = getQueryParams();
     if (params.hasOwnProperty("type") && params["type"] === "add-user") {
         document.getElementsByClassName("user-score")[0].className = "user-score";

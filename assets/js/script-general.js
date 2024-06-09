@@ -1,6 +1,5 @@
 // Add listener events in buttons after loading the page.
-document.addEventListener("DOMContentLoaded", function () {
-
+export function addGeneralListeners() {
     const params = getQueryParams();
     console.log(params);
     //Set volume
@@ -17,13 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = `index.html?volume=${volume.checked}`;
         });
     }
-});
+}
 
 /**
  * Get random integer number ranging from min to max
  * the returned integer number 
  */
-function getRandomInt(min, max) {
+export function getRandomInt(min, max) {
     return Math.ceil(Math.random() * (max - min)) + min - 1;
 }
 
@@ -31,7 +30,7 @@ function getRandomInt(min, max) {
  * Read parameters of location-url
  * the returned dictionary with parameters of location-url 
  */
-function getQueryParams() {
+export function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
     let queryParams = {};
     for (const [key, value] of params.entries()) {
@@ -44,7 +43,7 @@ function getQueryParams() {
  * Create audio and play it.
  * The parameter is the path to the sound file. 
  */
-function createPlayAudio(path) {
+export function createPlayAudio(path) {
     let sound = new Audio(path);
     sound.play().catch(function (error) {
         console.error('Error playing the sound:', error);
@@ -56,7 +55,7 @@ function createPlayAudio(path) {
 /**
  * Create Substitution Map and Reverse Substitution Map.
  * Using a simple substitution cipher, where each digit (0-9) is replaced by another digit according to a predefined mapping.
- * Return array witgih substitutionMap and reverseSubstitutionMap
+ * Return array with substitutionMap and reverseSubstitutionMap
  */
 // Function after using obfuscator
 function substitutionMaps() {
@@ -123,7 +122,7 @@ function _0x87af(_0x54eb4b, _0x5991b1) {
     }, _0x87af(_0x54eb4b, _0x5991b1);
 }
 // Function after using obfuscator
-function encrypt(_0x58a6f8, _0x5806f3) {
+export function encrypt(_0x58a6f8, _0x5806f3) {
     const _0xde8df0 = _0x87af;
     let _0x164f27 = _0x58a6f8[_0xde8df0(0xde)]()[_0xde8df0(0xdf)](_0x5806f3, '0'),
         _0x5a7962 = '';
@@ -175,7 +174,7 @@ function _0x5974() {
     return _0x5974();
 }
 // Function after using obfuscator
-function decrypt(_0x5f7ef5, _0x276b32) {
+export function decrypt(_0x5f7ef5, _0x276b32) {
     const _0xe46cd8 = _0x27bb;
     let _0x389206 = _0x5f7ef5[_0xe46cd8(0xad)]()[_0xe46cd8(0xa1)](_0x276b32, '0'),
         _0x383a61 = '';
@@ -193,7 +192,7 @@ function decrypt(_0x5f7ef5, _0x276b32) {
 /**
  * Open Leaderboard page with parameters
  */
-function openLeaderboardPage(type) {
+export function openLeaderboardPage(type) {
     const volume = document.getElementById("volume");
     window.location.href = `leaderboard.html?type=${type}&volume=${volume.checked}`;
 }

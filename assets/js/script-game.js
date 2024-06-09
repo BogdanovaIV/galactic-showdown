@@ -1,3 +1,13 @@
+// Inner scripts
+import {
+    addGeneralListeners,
+    getQueryParams,
+    encrypt,
+    createPlayAudio,
+    getRandomInt
+} from "./script-general.js";
+
+
 let numberUserShips = 50;
 let userShips = [];
 
@@ -10,32 +20,31 @@ let shipsPositions = [];
 const screenExpansionFactor = 2;
 const lengthShip = 50; //Set equal width class "ship"  
 
-// Add listener events to set images before they load.
-document.addEventListener("readystatechange", function () {
-    if (document.readyState === "interactive") {
-        const params = getQueryParams();
-        // Set map
-        if (params.hasOwnProperty("map")) {
-            const bodyTeg = document.getElementsByTagName("body")[0];
-            bodyTeg.className = params["map"] + " game-cursor";
-        }
-        //Set user and enemy side
-        if (params.hasOwnProperty("side")) {
-            //User side
-            fillParametersForSide("user-side", params["side"], userShips, "Your side");
-            //Enemy side
-            fillParametersForSide("enemy-side", getEnemySide(params["side"]), enemyShips, "The enemy side");
-        }
-        //Set volume
-        if (params.hasOwnProperty("volume")) {
-            const volume = document.getElementById("volume");
-            console.log(params);
-            volume.checked = params["volume"] === "true" ? true : false;
-        }
-    }
-});
-
 document.addEventListener("DOMContentLoaded", function () {
+
+    addGeneralListeners();
+
+    const params = getQueryParams();
+
+    // Set map
+    if (params.hasOwnProperty("map")) {
+        const bodyTeg = document.getElementsByTagName("body")[0];
+        bodyTeg.className = params["map"] + " game-cursor";
+    }
+    //Set user and enemy side
+    if (params.hasOwnProperty("side")) {
+        //User side
+        fillParametersForSide("user-side", params["side"], userShips, "Your side");
+        //Enemy side
+        fillParametersForSide("enemy-side", getEnemySide(params["side"]), enemyShips, "The enemy side");
+    }
+    //Set volume
+    if (params.hasOwnProperty("volume")) {
+        const volume = document.getElementById("volume");
+        console.log(params);
+        volume.checked = params["volume"] === "true" ? true : false;
+    }
+
     //Create all ships in advance to avoid collision
     let sum = numberUserShips + numberEnemyShips;
     for (let i = 0; i < sum; i++) {

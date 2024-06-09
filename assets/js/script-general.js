@@ -189,3 +189,11 @@ function decrypt(_0x5f7ef5, _0x276b32) {
     }
     return parseInt(_0x383a61, 0xa);
 }
+
+/**
+ * Open Leaderboard page with parameters
+ */
+function openLeaderboardPage(type) {
+    const volume = document.getElementById("volume");
+    window.location.href = `leaderboard.html?type=${type}&volume=${volume.checked}`;
+}

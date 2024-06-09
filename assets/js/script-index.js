@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Functions to open pages
-
 function openLeaderboardPage() {
     const volume = document.getElementById("volume");
     window.location.href = `leaderboard.html?type=only-show&volume=${volume.checked}`;

@@ -3,7 +3,16 @@ google.charts.load("current", {
     "packages": ["corechart", "table"]
 });
 
+// Import the functions which need from the SDKs
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, doc, setDoc, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
 let dataTable;
+
+// Database to store scores
+const db = initializeDataBase();
 
 // Add listener events before the page loads.
 document.addEventListener("readystatechange", function () {
@@ -16,43 +25,57 @@ document.addEventListener("readystatechange", function () {
         document.getElementById("total-score").innerText = decrypt(params["score"], 6);
     }
     document.getElementsByClassName("save")[0].addEventListener("click", function () {
-        updateFile();
+        addScore(document.getElementById("user-name").value, document.getElementById("total-score").innerText);
     });
 
 });
 
 /**
- * The returned leaderboard path
+ * Initialize Firestore
+ * return Firestore object
  */
-function getLeaderboardPath() {
-    const path = window.location.pathname.replace(/\/[^\/]*$/, '');
-    return window.location.origin + path + "/leaderboard.json";
+function initializeDataBase() {
+    // My web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "**************************",
+        authDomain: "galactic-showdown.firebaseapp.com",
+        projectId: "galactic-showdown",
+        storageBucket: "galactic-showdown.appspot.com",
+        messagingSenderId: "294241596480",
+        appId: "**************************"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    // Initialize Firestore
+    return getFirestore(app);
 }
 
 /**
- * Parse json file with leaders
- * the returned leader array
+ * Generate unique identifier
+ * return UID
  */
-async function parseFile() {
-    // Use asynchronous call because we have to get the file from the server.
-    try {
-        // Initiate the fetch request to get the file from the server
-        let response = await fetch(getLeaderboardPath());
-        // Check if the response is okay
-        if (response.ok) {
-            try {
-                return await response.json();
-            } catch (error) {
-                console.error(`File parsing error: ${error}`);
-                alert(`File parsing error: ${error}. Contact the administrator.`);
-                return [];
-            }
-        }
-    } catch (error) {
-        console.error(`HTTP error! status: ${response.status}`);
-        alert(`HTTP error! status: ${response.status}. Contact the administrator.`);
-        return [];
-    }
+function generateUniqueId() {
+    const timestamp = Date.now(); // Current time in milliseconds
+    const randomNum = Math.floor(Math.random() * 100000); // Random number between 0 and 99999
+    return `${timestamp}${randomNum}`;
+}
+
+/**
+ * Function to add a score in the Firebase database
+ */
+async function addScore(name, score) {
+      try {
+        await setDoc(doc(collection(db, "scores"), generateUniqueId()), {
+          name: name,
+          score: parseInt(score) // Ensure the score is stored as a number
+        });
+        console.log("Score successfully added!");
+        openLeaderboardPage("only-show");
+      } catch (error) {
+        console.error("Error adding score: ", error);
+      }
 }
 
 /**
@@ -64,14 +87,12 @@ async function drawTable() {
     dataTable.addColumn("string", "Name");
     dataTable.addColumn("number", "Score");
 
-    let leaderArray = await parseFile();
-    dataTable.addRows(leaderArray.length);
-    for (let i = 0; i < leaderArray.length; i++) {
-        dataTable.setCell(i, 0, leaderArray[i].name);
-        dataTable.setCell(i, 1, leaderArray[i].score, leaderArray[i].score, {
-            'className': 'center-text'
-        });
-    }
+    const q = query(collection(db, "scores"), orderBy("score", "desc"), limit(100));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      dataTable.addRow([doc.data().name, doc.data().score]);
+    });
+    
     var table = new google.visualization.Table(document.getElementById("leader-table"));
 
     table.draw(dataTable, {
@@ -88,8 +109,3 @@ async function drawTable() {
 }
 
 google.charts.setOnLoadCallback(drawTable);
-
-async function updateFile() {
-    //This function will be done in a future version
-    alert('Saving your score. Note: In a future version, this function will be done.');
-}

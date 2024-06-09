@@ -157,6 +157,8 @@ __The Game Rules page__
 - HTML - There are different elements, attributes, and meta tags to structure content and optimize web pages for search engines. 
 - CSS - It is used to style elements and create page layout, for animation and responsive design.
 - Javascript - It is used to change HTML depending on parameters and create a game process.
+- [Google Charts](https://developers.google.com/chart) - Google Charts is an online tool that is used to create charts and graphs. It is used to display the table of user scores.
+- [Firebase](https://firebase.google.com/) - Firebase is a set of backend cloud computing services and application development platforms provided by Google. It is used to store user scores.
 - [Obfuscator](https://www.obfuscator.io/) - A free and efficient obfuscator for JavaScript (including support of ES2022). Make your code harder to copy and prevent people from stealing your work. This tool is a Web UI to the excellent (and open source) javascript-obfuscator@4.0.0 created by Timofey Kachalov.
 - [Github](https://github.com/) - It is used to store versions.
 - [GitPages](https://pages.github.com/) - This resource deploys the websites.
@@ -219,6 +221,7 @@ To deploy the project locally, clone the repository. You can do this by running 
 
 - [Juliia Konovalova](https://github.com/IuliiaKonovalova/) was a great mentor who helped me to tap my potential and gave valuable advice.
 - [The Code Institute team](https://codeinstitute.net/) supported me and provided all the information that I needed.
+- [Firebase](https://firebase.google.com/) - provides a free option to get and store information.
 - [Obfuscator](https://www.obfuscator.io/) - provides a free and efficient obfuscator for JavaScript (including support of ES2022).
 - [GitHub](https://github.com/) provides free access to a versioning system.
 - [ILoveImg](https://www.iloveimg.com/) provided me with a free service to compress images.

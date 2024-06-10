@@ -45,7 +45,7 @@ The opening of all pages and the correct operation of all links and buttons were
 | The Leaderboard table displays the list of user scores | The Leaderboard table displays the list of user scores | The Leaderboard table contains all information from leaderboard.json | Yes | Yes | - |
 | The Leaderboard page displays the correct score which the user won | Click the Save score button after finishing the game | The score is right | Yes | Yes | - |
 | Edit the Name field | Edit the Name field | The Name field allows the user to fill in the name | Yes | Yes | - |
-| The Save button | Click on the Save button | The system saves information in the file and updates the Leaderboard table | Yes | No | The information is not saved in leaderboard.json |
+| The Save button | Click on the Save button | The system saves information in Firebase and updates the Leaderboard table | Yes | Yes | |
 | The Save button is hovered over on large devices | Hover over the Save button | The Save button changes color | Yes | Yes | - |
 | The Game Rules page | | | | | |
 | The Home button | Click on the Home button | The Home button opens the Home page | Yes | Yes | - |
@@ -61,21 +61,21 @@ The display of objects on different devices was tested. Those look attractive an
 
    ![User interface testing of the Home page](documentation/different-devices-home.png)
 
-- The Game page was tested on different devices be different users. Objects ook attractive and are displayed properly.
+- The Game page was tested on different devices be different users. Objects look attractive and are displayed properly.
 
    ![User interface testing of the Game page](documentation/different-devices-game.png)
 
-- The Leaderboard page was tested on different devices be different users. Objects ook attractive and are displayed properly.
+- The Leaderboard page was tested on different devices be different users. Objects look attractive and are displayed properly.
 
    ![User interface testing of the Leaderboard page](documentation/different-devices-leaderboard.png)
 
-- The Game Rules page was tested on different devices be different users. Objects ook attractive and are displayed properly.
+- The Game Rules page was tested on different devices be different users. Objects look attractive and are displayed properly.
 
    ![User interface testing of the Game Rules page](documentation/different-devices-game-rules.png)   
 
 __Compatibility Testing__
 
-The website was tested on different browsers such as Chrome, FireFox, Microsoft Edge. All objects function properly and display correctly. 
+The website was tested on different browsers such as Chrome, FireFox, Microsoft Edge. All objects function properly and are displayed correctly. 
 
  - Chrome
 

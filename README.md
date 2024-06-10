@@ -57,7 +57,7 @@ __The Home page__
 
 - The Volume button has a hover effect: changing color.
 
-![The Volume button (hover effect)](documentation/header-home-info-hover.png)
+![The Volume button (hover effect)](documentation/header-home-volume-hover.png)
 
 - The page has the feature to select one of the sides. The selected side has an orange background.
 
@@ -131,8 +131,16 @@ __The Leaderboard page__
 
 ![The Home button (hover effect)](documentation/leaderboard-button-home-hover.png)
 
+- The Volume button changes the image when the user clicks on it.
+
+![The Volume button (click)](documentation/leaderboard-button-volume-off.png)
+
+- The Volume button has a hover effect: changing color.
+
+![The Volume button (hover effect)](documentation/leaderboard-button-volume-hover.png)
+
 - The page has two conditions:
-  1. Display the score. The user can find the other user scores sorted by the score.
+  1. Display scores. The user can find the other user scores sorted by the score.
 
   ![The Leaderboard page displays only scores](documentation/leaderboard.png)
   
@@ -144,8 +152,6 @@ __The Leaderboard page__
 
   ![The Save button changes the color (hover effect)](documentation/leaderboard-button-save-hover.png)
   
-  ***Attention: the ability to save score is in development!!!***
-
 __The Game Rules page__
 
 - The page describes the game rules and has the Home button and the Volume button. The buttons have the same function as on the Leaderboard page.
@@ -159,7 +165,7 @@ __The Game Rules page__
 - Javascript - It is used to change HTML depending on parameters and create a game process.
 - [Google Charts](https://developers.google.com/chart) - Google Charts is an online tool that is used to create charts and graphs. It is used to display the table of user scores.
 - [Firebase](https://firebase.google.com/) - Firebase is a set of backend cloud computing services and application development platforms provided by Google. It is used to store user scores.
-- [Obfuscator](https://www.obfuscator.io/) - A free and efficient obfuscator for JavaScript (including support of ES2022). Make your code harder to copy and prevent people from stealing your work. This tool is a Web UI to the excellent (and open source) javascript-obfuscator@4.0.0 created by Timofey Kachalov.
+- [Obfuscator](https://www.obfuscator.io/) - A free and efficient obfuscator for JavaScript (including support of ES2022). Make your code harder to copy and prevent people from stealing your work. This tool is a Web UI to the excellent (and open source) javascript-obfuscator@4.0.0 created by Timofey Kachalov. It is used to encrypt some functions.
 - [Github](https://github.com/) - It is used to store versions.
 - [GitPages](https://pages.github.com/) - This resource deploys the websites.
 - [ILoveImg](https://www.iloveimg.com/) - It is used to resize and shrink images.
@@ -200,7 +206,7 @@ To deploy the project locally, clone the repository. You can do this by running 
 
 ## Future Improvements
 
- - Save the user score.
+ - Add the animation of the explosion.
  - Add the ship level and change the number of shoots to destroy a ship depending on this level.
  - Add ships which can move horizontally.
 

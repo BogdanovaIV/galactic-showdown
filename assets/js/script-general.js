@@ -173,6 +173,11 @@ function _0x5974() {
     };
     return _0x5974();
 }
+/**
+ * Function "Decrypt"
+ * Decrypt the number.
+ * Return decrypted number
+ */
 // Function after using obfuscator
 export function decrypt(_0x5f7ef5, _0x276b32) {
     const _0xe46cd8 = _0x27bb;

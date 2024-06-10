@@ -32,7 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Functions to open pages
-
+/**
+ * Open Leaderboard page with parameters
+ */
 function openGamePage(parameterMap, parameterSide, volume) {
     window.location.href = `game.html?map=${parameterMap}&side=${parameterSide}&volume=${volume}`;
 }

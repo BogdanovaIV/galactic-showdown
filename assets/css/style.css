@@ -348,7 +348,7 @@ main {
     align-items: flex-end;
     justify-content: center;
     width: 100%;
-    margin: 1rem;
+    margin: 1rem 0;
 }
 
 .user-name-class {

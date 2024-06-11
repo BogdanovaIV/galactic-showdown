@@ -20,7 +20,7 @@ import {
 
 // Inner scripts
 import {
-    openLeaderboardPage,
+    openPage,
     addGeneralListeners,
     getQueryParams,
     decrypt
@@ -137,7 +137,9 @@ async function addScore(name, score) {
             score: parseInt(score) // Ensure the score is stored as a number
         });
         console.log("Score successfully added!");
-        openLeaderboardPage("only-show");
+        openPage("leaderboard.html", {
+            "type": "only-show"
+        });
     } catch (error) {
         console.error("Error adding score: ", error);
     }

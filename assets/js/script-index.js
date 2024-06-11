@@ -1,6 +1,6 @@
 // Inner scripts
 import {
-    openLeaderboardPage,
+    openPage,
     addGeneralListeners
 } from "./script-general.js";
 
@@ -14,12 +14,17 @@ document.addEventListener("DOMContentLoaded", function () {
     for (const button of buttons) {
         button.addEventListener("click", function () {
             if (this.getAttribute("data-page") === "leaderboard") {
-                openLeaderboardPage("only-show");
+                openPage("leaderboard.html", {
+                    "type": "only-show"
+                });
             } else {
                 // Select all input elements and elements with class "custom-class"
                 const sides = document.querySelectorAll("input[type='radio']:checked");
-                const volume = document.getElementById("volume");
-                openGamePage(this.getAttribute("data-page"), sides[0].getAttribute("value"), volume.checked);
+                openPage("game.html", {
+                    "map": this.getAttribute("data-page"),
+                    "side": sides[0].getAttribute("value")
+                });
+               
             }
         });
     }
@@ -30,11 +35,3 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = `game-rules.html?volume=${volume.checked}`;
     });
 });
-
-// Functions to open pages
-/**
- * Open Leaderboard page with parameters
- */
-function openGamePage(parameterMap, parameterSide, volume) {
-    window.location.href = `game.html?map=${parameterMap}&side=${parameterSide}&volume=${volume}`;
-}

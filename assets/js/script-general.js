@@ -1,7 +1,6 @@
 // Add listener events in buttons after loading the page.
 export function addGeneralListeners() {
     const params = getQueryParams();
-    console.log(params);
     //Set volume
     if (params.hasOwnProperty("volume")) {
         const volume = document.getElementById("volume");
@@ -12,8 +11,7 @@ export function addGeneralListeners() {
     if (homeLink) {
         homeLink.addEventListener("click", function (event) {
             event.preventDefault(); // Prevent the default action (navigation)
-            const volume = document.getElementById("volume");
-            window.location.href = `index.html?volume=${volume.checked}`;
+            openPage("index.html", {});
         });
     }
 }
@@ -195,9 +193,26 @@ export function decrypt(_0x5f7ef5, _0x276b32) {
 }
 
 /**
- * Open Leaderboard page with parameters
+ * Add common parameters in the dictionary
  */
-export function openLeaderboardPage(type) {
-    const volume = document.getElementById("volume");
-    window.location.href = `leaderboard.html?type=${type}&volume=${volume.checked}`;
+function addCommonParameters(params){
+    params["volume"] = document.getElementById("volume").checked;
+}
+
+/**
+ * Open the page with parameters
+ */
+export function openPage(pagName, params) {
+    addCommonParameters(params);
+    let hrefLocation = `${pagName}?`;
+    let isFirst = true;
+    for (const [key, value] of Object.entries(params)) {
+        if (isFirst){
+            isFirst = false;
+        } else {
+            hrefLocation += `&`;
+        }
+        hrefLocation += `${key}=${value}`;
+    }
+    window.location.href = hrefLocation;
 }

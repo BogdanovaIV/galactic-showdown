@@ -1,5 +1,6 @@
 // Inner scripts
 import {
+    openPage,
     addGeneralListeners,
     getQueryParams,
     encrypt,
@@ -53,7 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.getElementsByClassName("leaderboard")[0].addEventListener("click", function () {
-        openLeaderboardPage();
+        openPage("leaderboard.html", {
+            "type": "add-user",
+            "score": encrypt(document.getElementById("total-score").innerText, 6)
+        });
     });
 
     //Call sound "laser gun shot". The sounds are overlap each other.       
@@ -275,12 +279,4 @@ function showResult() {
     }
     //Set the balance of ships
     setBalanceShips(lifeShips);
-}
-
-/**
- * Open leaderboard with score in the current window 
- */
-function openLeaderboardPage() {
-    const volume = document.getElementById("volume");
-    window.location.href = `leaderboard.html?type=add-user&score=${encrypt(document.getElementById("total-score").innerText, 6)}&volume=${volume.checked}`;
 }

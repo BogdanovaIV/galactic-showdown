@@ -320,6 +320,7 @@ main {
     right: 5px;
     color: #f0f8ff97;
     font-weight: bold;
+    text-shadow: 1px 1px 2px #000, -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000; 
 }
 
 /* game-rules.html */
@@ -389,6 +390,7 @@ main {
 }
 
 /* footer */
+
 footer {
     margin: 5px 0;
     display: flex;
@@ -403,6 +405,11 @@ footer a {
     color: #CC2C1F;
     font-size: 120%;
     padding: 0 15px;
+}
+
+.light-text {
+    color: #f0f8ff97;
+    text-shadow: 1px 1px 2px #000, -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000; 
 }
 
 #red-heart {

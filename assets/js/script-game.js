@@ -1,3 +1,5 @@
+/* jshint esversion: 11, sub:true */
+
 // Inner scripts
 import {
     openPage,
@@ -137,7 +139,7 @@ function createShip() {
     if (typeShip === 1) {
         idName = "user-side" + numberUserShips--;
         classShip = userShips[getRandomInt(0, userShips.length)];
-        textButton = "It is your ship. Do not shoot it."
+        textButton = "It is your ship. Do not shoot it.";
     } else {
         idName = "enemy-side" + numberEnemyShips--;
         classShip = enemyShips[getRandomInt(0, enemyShips.length)];

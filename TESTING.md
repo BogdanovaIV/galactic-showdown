@@ -111,7 +111,7 @@ Performance checking was tested by LightHouse.
 
 __Code Quality__
 
-Quality checking was tested by [Markup validator service](https://validator.w3.org/) and [CSS validator service](https://jigsaw.w3.org/css-validator/).
+Quality checking was tested by [Markup validator service](https://validator.w3.org/), [CSS validator service](https://jigsaw.w3.org/css-validator/) and [JS Hint](https://jshint.com/).
 
  - [Markup validator service](https://validator.w3.org/). All pages were checked and did not have errors and warnings.
 
@@ -120,6 +120,26 @@ Quality checking was tested by [Markup validator service](https://validator.w3.o
  - [CSS validator service](https://jigsaw.w3.org/css-validator/). The file 'style.css' was checked and did not have errors.
 
  ![The result of checking CSS validator service (errors)](documentation/css-validator-errors.png)
+
+ - The file 'script-game-rules.js' was checked and did not have errors.
+
+ ![The result of checking JS Hint script-game-rules.js](documentation/jshint-game-rules.png)
+
+ - The file 'script-game.js' was checked and did not have errors.
+
+ ![The result of checking JS Hint script-game-rules.js](documentation/jshint-game.png)
+
+- The file 'script-general.js' was checked and has four warnings which do not have an impact on working the application because those are created as a result of applying obfuscator to encrypt code.
+
+ ![The result of checking JS Hint script-general.js](documentation/jshint-general.png)
+
+ - The file 'script-index.js' was checked and did not have errors.
+
+ ![The result of checking JS Hint script-general.js](documentation/jshint-index.png)
+
+ - The file 'script-leaderboard.js' was checked. It has two warnings which do not have an impact on working the application because those are created as a result of applying obfuscator to encrypt code. Also, it has one undefined variable which is the variable defined by Google charts.
+
+ ![The result of checking JS Hint script-general.js](documentation/jshint-index.png)
 
 ## Bugs
 

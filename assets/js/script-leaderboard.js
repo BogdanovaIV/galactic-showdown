@@ -1,3 +1,5 @@
+/* jshint esversion: 11, sub:true */
+
 //Google charts
 google.charts.load("current", {
     "packages": ["corechart", "table"]

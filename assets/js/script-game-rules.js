@@ -1,3 +1,5 @@
+/* jshint esversion: 11, sub:true */
+
 // Inner scripts
 import {
     addGeneralListeners

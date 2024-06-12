@@ -1,3 +1,5 @@
+/* jshint esversion: 11, sub:true */
+
 // Add listener events in buttons after loading the page.
 export function addGeneralListeners() {
     const params = getQueryParams();

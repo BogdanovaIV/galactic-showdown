@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const params = getQueryParams();
 
     // Set map
-    if (params.hasOwnProperty("map")) {
+    if (params.hasOwnProperty("game-map")) {
         const bodyTeg = document.getElementsByTagName("body")[0];
-        bodyTeg.className = params["map"] + " game-cursor";
+        bodyTeg.className = params["game-map"] + " game-cursor";
     }
     //Set user and enemy side
     if (params.hasOwnProperty("side")) {

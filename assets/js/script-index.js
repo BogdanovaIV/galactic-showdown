@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Select all input elements and elements with class "custom-class"
                 const sides = document.querySelectorAll("input[type='radio']:checked");
                 openPage("game.html", {
-                    "map": this.getAttribute("data-page"),
+                    "game-map": this.getAttribute("data-page"),
                     "side": sides[0].getAttribute("value")
                 });
                
